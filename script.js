@@ -1,45 +1,54 @@
 // Mobile Menu Toggle
-const hamburger = document.getElementById('hamburger');
+const mobileToggle = document.getElementById('mobileToggle');
 const navMenu = document.getElementById('navMenu');
 
-hamburger.addEventListener('click', () => {
+mobileToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
-const navLinks = document.querySelectorAll('.nav-link');
+// Close menu when clicking on links
+const navLinks = document.querySelectorAll('.nav-menu a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
     });
 });
 
-// Smooth Scrolling
+// Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const offsetTop = target.offsetTop - 121; // Account for fixed navbar + top bar
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
             });
         }
     });
 });
 
-// Form Submission
-const inquiryForm = document.getElementById('inquiryForm');
-inquiryForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you for your inquiry! We will contact you soon.');
-    inquiryForm.reset();
+// Navbar Scroll Effect
+let lastScroll = 0;
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.12)';
+    } else {
+        navbar.style.boxShadow = '0 2px 16px rgba(0,0,0,0.08)';
+    }
+    
+    lastScroll = currentScroll;
 });
 
-// Animate on Scroll
+// Intersection Observer for Animations
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -80px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -51,33 +60,23 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Apply animation to cards
-document.querySelectorAll('.about-card, .program-card, .stat-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
-});
-
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
-    } else {
-        navbar.style.background = '#ffffff';
-        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-    }
+// Observe elements
+const animateElements = document.querySelectorAll('.value-card, .program, .life-card, .step, .contact-card');
+animateElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
 });
 
 // Counter Animation for Stats
-const stats = document.querySelectorAll('.stat-number');
-const statsSection = document.querySelector('.stats');
+const stats = document.querySelectorAll('.stat-item h3');
+const aboutSection = document.querySelector('.about');
 
 const animateCounter = (element) => {
     const target = element.textContent;
-    const isPercentage = target.includes('%');
+    const isPercent = target.includes('%');
+    const isPlus = target.includes('+');
     const number = parseInt(target.replace(/\D/g, ''));
     const duration = 2000;
     const increment = number / (duration / 16);
@@ -86,7 +85,7 @@ const animateCounter = (element) => {
     const updateCounter = () => {
         current += increment;
         if (current < number) {
-            element.textContent = Math.floor(current) + (isPercentage ? '%' : '+');
+            element.textContent = Math.floor(current) + (isPlus ? '+' : isPercent ? '%' : '');
             requestAnimationFrame(updateCounter);
         } else {
             element.textContent = target;
@@ -98,18 +97,85 @@ const animateCounter = (element) => {
 
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+            entry.target.dataset.animated = 'true';
             stats.forEach(stat => animateCounter(stat));
-            statsObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.3 });
 
-if (statsSection) {
-    statsObserver.observe(statsSection);
+if (aboutSection) {
+    statsObserver.observe(aboutSection);
 }
 
-// Add current year to footer
+// Form Submission
+const admissionForm = document.getElementById('admissionForm');
+if (admissionForm) {
+    admissionForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Show success message
+        const formData = new FormData(admissionForm);
+        const name = formData.get('name') || 'Parent/Guardian';
+        
+        alert('Thank you for your inquiry! Our admissions team will contact you within 24 hours.');
+        admissionForm.reset();
+    });
+}
+
+// Add parallax effect to hero
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+});
+
+// Set current year in footer
 const currentYear = new Date().getFullYear();
-document.querySelector('.footer-bottom p').innerHTML = 
-    `&copy; ${currentYear} Sunrise International School. All rights reserved.`;
+const footerText = document.querySelector('.footer-bottom p');
+if (footerText && !footerText.textContent.includes(currentYear)) {
+    footerText.innerHTML = footerText.innerHTML.replace('2026', currentYear);
+}
+
+// Lazy load placeholder images
+const placeholders = document.querySelectorAll('.image-placeholder, .map-placeholder');
+placeholders.forEach(placeholder => {
+    placeholder.style.opacity = '0';
+    placeholder.style.transition = 'opacity 0.6s ease';
+});
+
+const placeholderObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+        }
+    });
+}, { threshold: 0.2 });
+
+placeholders.forEach(placeholder => placeholderObserver.observe(placeholder));
+
+// Add active state to nav links based on scroll position
+window.addEventListener('scroll', () => {
+    let current = '';
+    const sections = document.querySelectorAll('section[id]');
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 200;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+console.log('SKV School website loaded successfully ✓');

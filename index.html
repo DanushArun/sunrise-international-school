@@ -3,26 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunrise International School - Excellence in Education</title>
+    <title>SKV School | Excellence in Education</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-left">
+                    <span>📞 +91 80 2345 6789</span>
+                    <span>✉️ info@skvschool.edu.in</span>
+                </div>
+                <div class="top-right">
+                    <a href="#admissions" class="apply-link">Apply Now</a>
+                    <a href="#" class="parent-portal">Parent Portal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <h2>🎓 Sunrise International</h2>
+                    <h1>SKV SCHOOL</h1>
+                    <p class="tagline">Inspiring Excellence Since 1998</p>
                 </div>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#programs" class="nav-link">Programs</a></li>
-                    <li><a href="#admissions" class="nav-link">Admissions</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#academics">Academics</a></li>
+                    <li><a href="#life">School Life</a></li>
+                    <li><a href="#admissions">Admissions</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="hamburger" id="hamburger">
+                <div class="mobile-toggle" id="mobileToggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -33,13 +51,33 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">Welcome to Sunrise International School</h1>
-            <p class="hero-subtitle">Inspiring Excellence, Nurturing Tomorrow's Leaders</p>
-            <div class="hero-buttons">
-                <a href="#admissions" class="btn btn-primary">Apply Now</a>
-                <a href="#about" class="btn btn-secondary">Learn More</a>
+        <div class="hero-slider">
+            <div class="slide active">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="container">
+                        <h1 class="hero-title">Welcome to SKV School</h1>
+                        <p class="hero-text">Nurturing Young Minds, Building Future Leaders</p>
+                        <div class="hero-actions">
+                            <a href="#admissions" class="btn btn-primary">Admissions Open</a>
+                            <a href="#about" class="btn btn-outline">Discover More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="arrow-down"></div>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <h2>Our Mission</h2>
+                <p class="mission-text">To provide a nurturing and academically excellent environment that empowers students to become compassionate, creative, and confident global citizens.</p>
             </div>
         </div>
     </section>
@@ -48,99 +86,178 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2>About Our School</h2>
-                <p>Building foundations for lifelong success</p>
+                <span class="section-subtitle">Who We Are</span>
+                <h2>About SKV School</h2>
             </div>
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="icon">📚</div>
-                    <h3>Academic Excellence</h3>
-                    <p>World-class curriculum designed to challenge and inspire students at every level.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>SKV School has been a beacon of educational excellence since 1998, committed to providing world-class education that prepares students for the challenges of tomorrow.</p>
+                    <p>Our state-of-the-art facilities, experienced faculty, and innovative curriculum ensure that every child receives personalized attention and opportunities to excel in academics, sports, and the arts.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3>25+</h3>
+                            <p>Years of Excellence</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>2500+</h3>
+                            <p>Students</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>200+</h3>
+                            <p>Expert Faculty</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Results</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-card">
-                    <div class="icon">🌟</div>
-                    <h3>Experienced Faculty</h3>
-                    <p>Dedicated educators with decades of combined teaching experience.</p>
-                </div>
-                <div class="about-card">
-                    <div class="icon">🏆</div>
-                    <h3>Proven Results</h3>
-                    <p>99% university acceptance rate with students at top institutions worldwide.</p>
-                </div>
-                <div class="about-card">
-                    <div class="icon">🌍</div>
-                    <h3>Global Perspective</h3>
-                    <p>International curriculum preparing students for a connected world.</p>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <p>📚</p>
+                        <p>State-of-the-art Campus</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Programs Section -->
-    <section id="programs" class="programs">
+    <!-- Values Section -->
+    <section class="values">
         <div class="container">
             <div class="section-header">
-                <h2>Our Programs</h2>
-                <p>Comprehensive education from kindergarten to grade 12</p>
+                <span class="section-subtitle">Our Core Values</span>
+                <h2>What We Stand For</h2>
             </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <h3>Primary School</h3>
-                    <p class="grade">Grades K-5</p>
-                    <ul>
-                        <li>Foundation in core subjects</li>
-                        <li>Play-based learning</li>
-                        <li>Creative arts & music</li>
-                        <li>Physical education</li>
-                    </ul>
-                    <a href="#admissions" class="btn-small">Enroll Now</a>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Excellence</h3>
+                    <p>Striving for the highest standards in everything we do</p>
                 </div>
-                <div class="program-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <h3>Middle School</h3>
-                    <p class="grade">Grades 6-8</p>
-                    <ul>
-                        <li>Advanced STEM curriculum</li>
-                        <li>Language programs</li>
-                        <li>Leadership development</li>
-                        <li>Sports & activities</li>
-                    </ul>
-                    <a href="#admissions" class="btn-small">Enroll Now</a>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Integrity</h3>
+                    <p>Building character through honesty and ethical behavior</p>
                 </div>
-                <div class="program-card">
-                    <h3>High School</h3>
-                    <p class="grade">Grades 9-12</p>
-                    <ul>
-                        <li>AP & IB programs</li>
-                        <li>College counseling</li>
-                        <li>Career preparation</li>
-                        <li>Research opportunities</li>
-                    </ul>
-                    <a href="#admissions" class="btn-small">Enroll Now</a>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>Encouraging creativity and forward-thinking</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Global Citizenship</h3>
+                    <p>Preparing students for an interconnected world</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">❤️</div>
+                    <h3>Compassion</h3>
+                    <p>Fostering empathy and social responsibility</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Resilience</h3>
+                    <p>Building strength to overcome challenges</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Academics Section -->
+    <section id="academics" class="academics">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3 class="stat-number">2000+</h3>
-                    <p>Students Enrolled</p>
+            <div class="section-header">
+                <span class="section-subtitle">Learning Excellence</span>
+                <h2>Academic Programs</h2>
+            </div>
+            <div class="academic-programs">
+                <div class="program">
+                    <div class="program-header">
+                        <h3>Primary School</h3>
+                        <span class="grade-range">Grades K-5</span>
+                    </div>
+                    <div class="program-body">
+                        <p>Foundation years focused on holistic development through play-based and experiential learning.</p>
+                        <ul class="program-features">
+                            <li>Activity-based learning</li>
+                            <li>Montessori approach</li>
+                            <li>Creative arts integration</li>
+                            <li>Language development</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h3 class="stat-number">150+</h3>
-                    <p>Expert Teachers</p>
+                <div class="program program-highlight">
+                    <div class="program-header">
+                        <h3>Middle School</h3>
+                        <span class="grade-range">Grades 6-8</span>
+                    </div>
+                    <div class="program-body">
+                        <p>Comprehensive curriculum building critical thinking and academic excellence.</p>
+                        <ul class="program-features">
+                            <li>STEM focus</li>
+                            <li>Foreign languages</li>
+                            <li>Project-based learning</li>
+                            <li>Leadership programs</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h3 class="stat-number">25+</h3>
-                    <p>Years of Excellence</p>
+                <div class="program">
+                    <div class="program-header">
+                        <h3>High School</h3>
+                        <span class="grade-range">Grades 9-12</span>
+                    </div>
+                    <div class="program-body">
+                        <p>Rigorous academic preparation for university and beyond with CBSE/ICSE curriculum.</p>
+                        <ul class="program-features">
+                            <li>Advanced sciences</li>
+                            <li>Career counseling</li>
+                            <li>University preparation</li>
+                            <li>Research opportunities</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h3 class="stat-number">99%</h3>
-                    <p>University Acceptance</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Life Section -->
+    <section id="life" class="school-life">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Beyond Academics</span>
+                <h2>School Life</h2>
+            </div>
+            <div class="life-grid">
+                <div class="life-card">
+                    <div class="life-image">🎨</div>
+                    <h3>Arts & Culture</h3>
+                    <p>Music, dance, drama, and visual arts programs</p>
+                </div>
+                <div class="life-card">
+                    <div class="life-image">⚽</div>
+                    <h3>Sports</h3>
+                    <p>Cricket, football, basketball, athletics, and more</p>
+                </div>
+                <div class="life-card">
+                    <div class="life-image">🔬</div>
+                    <h3>STEM Labs</h3>
+                    <p>Modern labs for hands-on science and technology</p>
+                </div>
+                <div class="life-card">
+                    <div class="life-image">📚</div>
+                    <h3>Library</h3>
+                    <p>Extensive collection supporting academic growth</p>
+                </div>
+                <div class="life-card">
+                    <div class="life-image">🌟</div>
+                    <h3>Clubs & Activities</h3>
+                    <p>Robotics, debate, environmental club, and more</p>
+                </div>
+                <div class="life-card">
+                    <div class="life-image">🏆</div>
+                    <h3>Achievements</h3>
+                    <p>Award-winning students in academics and sports</p>
                 </div>
             </div>
         </div>
@@ -150,54 +267,89 @@
     <section id="admissions" class="admissions">
         <div class="container">
             <div class="section-header">
+                <span class="section-subtitle">Join Our Community</span>
                 <h2>Admissions</h2>
-                <p>Join our community of learners</p>
             </div>
-            <div class="admissions-content">
+            <div class="admissions-grid">
                 <div class="admissions-info">
-                    <h3>Application Process</h3>
-                    <ol class="process-list">
-                        <li>
-                            <strong>Submit Application</strong>
-                            <p>Complete our online application form with required documents.</p>
-                        </li>
-                        <li>
-                            <strong>Entrance Assessment</strong>
-                            <p>Students take age-appropriate entrance tests.</p>
-                        </li>
-                        <li>
-                            <strong>Parent Interview</strong>
-                            <p>Meet with our admissions team to discuss your child's needs.</p>
-                        </li>
-                        <li>
-                            <strong>Enrollment</strong>
-                            <p>Receive acceptance letter and complete enrollment process.</p>
-                        </li>
-                    </ol>
-                    <div class="important-dates">
+                    <h3>Admission Process</h3>
+                    <div class="admission-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Inquiry & Registration</h4>
+                                <p>Submit online inquiry form or visit campus</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Application Submission</h4>
+                                <p>Complete application with required documents</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Assessment & Interview</h4>
+                                <p>Student assessment and parent interaction</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Admission Confirmation</h4>
+                                <p>Receive offer and complete enrollment</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="admission-dates">
                         <h4>Important Dates 2026-27</h4>
                         <ul>
-                            <li>Application Opens: March 1, 2026</li>
-                            <li>Application Deadline: May 31, 2026</li>
-                            <li>Academic Year Begins: August 15, 2026</li>
+                            <li><strong>Applications Open:</strong> March 1, 2026</li>
+                            <li><strong>Last Date:</strong> May 31, 2026</li>
+                            <li><strong>Session Begins:</strong> June 15, 2026</li>
                         </ul>
                     </div>
                 </div>
-                <div class="application-form">
-                    <h3>Quick Inquiry</h3>
-                    <form id="inquiryForm">
-                        <input type="text" placeholder="Parent Name" required>
-                        <input type="email" placeholder="Email Address" required>
-                        <input type="tel" placeholder="Phone Number" required>
-                        <select required>
-                            <option value="">Select Grade Level</option>
-                            <option>Kindergarten</option>
-                            <option>Grade 1-5</option>
-                            <option>Grade 6-8</option>
-                            <option>Grade 9-12</option>
-                        </select>
-                        <textarea placeholder="Message (optional)" rows="4"></textarea>
-                        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                <div class="admission-form">
+                    <h3>Request Information</h3>
+                    <form id="admissionForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Parent/Guardian Name *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Student Name *" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Grade *</option>
+                                <option>Pre-KG</option>
+                                <option>KG</option>
+                                <option>Grade 1</option>
+                                <option>Grade 2</option>
+                                <option>Grade 3</option>
+                                <option>Grade 4</option>
+                                <option>Grade 5</option>
+                                <option>Grade 6</option>
+                                <option>Grade 7</option>
+                                <option>Grade 8</option>
+                                <option>Grade 9</option>
+                                <option>Grade 10</option>
+                                <option>Grade 11</option>
+                                <option>Grade 12</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Message (Optional)" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Submit Inquiry</button>
                     </form>
                 </div>
             </div>
@@ -208,31 +360,43 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
+                <span class="section-subtitle">Get in Touch</span>
                 <h2>Contact Us</h2>
-                <p>We'd love to hear from you</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <h4>📍 Address</h4>
-                        <p>123 Education Lane<br>Bangalore, Karnataka 560001<br>India</p>
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h4>Visit Us</h4>
+                        <p>SKV School Campus<br>
+                        Bangalore, Karnataka<br>
+                        India - 560001</p>
                     </div>
-                    <div class="contact-item">
-                        <h4>📞 Phone</h4>
-                        <p>+91 80 1234 5678<br>+91 80 8765 4321</p>
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h4>Call Us</h4>
+                        <p>+91 80 2345 6789<br>
+                        +91 80 9876 5432</p>
                     </div>
-                    <div class="contact-item">
-                        <h4>✉️ Email</h4>
-                        <p>admissions@sunrise-school.edu<br>info@sunrise-school.edu</p>
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h4>Email Us</h4>
+                        <p>admissions@skvschool.edu.in<br>
+                        info@skvschool.edu.in</p>
                     </div>
-                    <div class="contact-item">
-                        <h4>🕐 Office Hours</h4>
-                        <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                    <div class="contact-card">
+                        <div class="contact-icon">🕒</div>
+                        <h4>Office Hours</h4>
+                        <p>Monday - Friday: 8:00 AM - 5:00 PM<br>
+                        Saturday: 9:00 AM - 2:00 PM</p>
                     </div>
                 </div>
-                <div class="map-placeholder">
-                    <p>📍 Located in the heart of Bangalore</p>
-                    <p>Easy access via metro and major roads</p>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <p>🗺️</p>
+                        <p>Located in the heart of Bangalore</p>
+                        <p>Easy access via metro and major roads</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -241,16 +405,22 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>About Sunrise</h4>
+            <div class="footer-content">
+                <div class="footer-col footer-about">
+                    <h3>SKV SCHOOL</h3>
                     <p>Committed to academic excellence and character development for over 25 years.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#academics">Academics</a></li>
                         <li><a href="#admissions">Admissions</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -260,22 +430,21 @@
                     <ul>
                         <li><a href="#">Parent Portal</a></li>
                         <li><a href="#">Student Portal</a></li>
-                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Academic Calendar</a></li>
                         <li><a href="#">News & Events</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#">Facebook</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">LinkedIn</a>
-                    </div>
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>📞 +91 80 2345 6789</li>
+                        <li>✉️ info@skvschool.edu.in</li>
+                        <li>📍 Bangalore, Karnataka</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Sunrise International School. All rights reserved.</p>
+                <p>&copy; 2026 SKV School. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
             </div>
         </div>
     </footer>
