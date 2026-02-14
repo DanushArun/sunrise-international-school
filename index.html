@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SKV School - Premier CBSE education in Bangalore. World-class facilities, expert faculty, and holistic development since 1998.">
-    <meta name="theme-color" content="#1e3a5f">
-    <title>SKV School | Premier Education in Bangalore</title>
+    <meta name="description" content="S.K.Velayutham Higher Secondary School, Kurinjipadi - Nurturing excellence since 1960. Tamil Nadu State Board education from LKG to 12th grade.">
+    <meta name="keywords" content="SKV School, S.K.Velayutham, Kurinjipadi, Cuddalore, Tamil Nadu, State Board, Higher Secondary School">
+    <meta name="theme-color" content="#7c2d12">
+    <title>S.K.Velayutham Higher Secondary School | Kurinjipadi</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -13,10 +14,10 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#1e3a5f', 950: '#0f172a' },
-                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
+                        maroon: { 50: '#fdf2f2', 100: '#fce4e4', 200: '#facaca', 300: '#f5a3a3', 400: '#ed6f6f', 500: '#e24444', 600: '#cf2929', 700: '#ac1f1f', 800: '#8f1d1d', 900: '#7c2d12', 950: '#450a0a' },
+                        cream: { 50: '#fefdfb', 100: '#fdf9f3', 200: '#faf3e6', 300: '#f5e6cc', 400: '#edd4a8', 500: '#e4c185' }
                     },
-                    fontFamily: { display: ['Playfair Display', 'serif'], body: ['DM Sans', 'sans-serif'] }
+                    fontFamily: { display: ['Playfair Display', 'serif'], body: ['Source Sans 3', 'sans-serif'], tamil: ['Noto Sans Tamil', 'sans-serif'] }
                 }
             }
         }
@@ -24,86 +25,100 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        * { font-family: 'DM Sans', sans-serif; }
+        * { font-family: 'Source Sans 3', sans-serif; }
         h1, h2, h3, .font-display { font-family: 'Playfair Display', serif; }
-        html[lang="ta"] * { font-family: 'Noto Sans Tamil', 'DM Sans', sans-serif; }
-        html[lang="ta"] h1, html[lang="ta"] h2, html[lang="ta"] h3 { font-family: 'Noto Sans Tamil', serif; }
+        .tamil-text { font-family: 'Noto Sans Tamil', sans-serif; }
+        html[lang="ta"] * { font-family: 'Noto Sans Tamil', 'Source Sans 3', sans-serif; }
         
         /* Language toggle */
-        .lang-btn.active { background: linear-gradient(135deg, #1e3a5f 0%, #334155 100%); color: white; }
+        .lang-btn.active { background: #7c2d12; color: white; }
+        
+        /* Legacy badge animation */
+        @keyframes shine { 0% { background-position: -100% 0; } 100% { background-position: 200% 0; } }
+        .legacy-badge { background: linear-gradient(90deg, #7c2d12 0%, #b45309 50%, #7c2d12 100%); background-size: 200% 100%; animation: shine 3s infinite; }
         
         /* Logo Slider */
         .logo-slider { overflow: hidden; mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); }
-        .logo-track { display: flex; gap: 4rem; animation: slide 25s linear infinite; width: max-content; }
-        .logo-track:hover { animation-play-state: paused; }
+        .logo-track { display: flex; gap: 4rem; animation: slide 30s linear infinite; width: max-content; }
         @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
-        /* Premium card */
-        .premium-card {
-            background: white;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-            transition: all 0.3s ease;
-        }
-        .premium-card:hover { box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15); transform: translateY(-4px); }
-        
-        /* Gold accent */
-        .gold-line { width: 60px; height: 3px; background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+        /* Cards */
+        .heritage-card { background: linear-gradient(135deg, #fefdfb 0%, #fdf9f3 100%); border: 1px solid #f5e6cc; transition: all 0.3s ease; }
+        .heritage-card:hover { box-shadow: 0 10px 40px -10px rgba(124,45,18,0.2); transform: translateY(-2px); }
         
         /* Mobile menu */
         .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
         .mobile-menu.active { transform: translateX(0); }
         
-        /* Disable hover on mobile */
-        @media (max-width: 768px) { .premium-card:hover { transform: none; } }
+        /* Decorative border */
+        .tamil-border { border-image: linear-gradient(90deg, #7c2d12, #b45309, #7c2d12) 1; }
         
-        /* Form focus */
-        .form-input:focus { border-color: #1e3a5f; box-shadow: 0 0 0 3px rgba(30,58,95,0.1); outline: none; }
+        /* Stats counter */
+        .stat-number { background: linear-gradient(135deg, #7c2d12, #b45309); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="bg-white text-gray-800 antialiased">
+<body class="bg-cream-50 text-gray-800 antialiased">
+
+    <!-- Top Bar -->
+    <div class="bg-maroon-900 text-white py-2 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    <span class="hidden sm:inline">04142-XXXXXX</span>
+                </span>
+                <span class="hidden md:flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    Kurinjipadi - 607302
+                </span>
+            </div>
+            <div class="legacy-badge px-3 py-1 rounded-full text-xs font-semibold">
+                <span data-en="Serving Since 1960 • 65+ Years of Excellence" data-ta="1960 முதல் சேவை • 65+ ஆண்டுகள் சிறப்பு">Serving Since 1960 • 65+ Years of Excellence</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-cream-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="#" class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-navy-900 rounded-xl flex items-center justify-center">
-                        <span class="text-gold-400 font-display font-bold text-xl">S</span>
+                    <div class="w-14 h-14 bg-maroon-900 rounded-full flex items-center justify-center border-4 border-cream-300">
+                        <span class="text-cream-300 font-display font-bold text-xl">SKV</span>
                     </div>
                     <div>
-                        <div class="font-display font-bold text-xl text-navy-900">SKV School</div>
-                        <div class="text-xs text-gray-500">CBSE Affiliated • Est. 1998</div>
+                        <div class="font-display font-bold text-lg text-maroon-900 leading-tight">S.K.Velayutham HSS</div>
+                        <div class="tamil-text text-xs text-maroon-700">ச.க.வேலாயுதம் மேனிலைப்பள்ளி</div>
                     </div>
                 </a>
                 
                 <nav class="hidden lg:flex items-center gap-8">
-                    <a href="#about" class="text-gray-600 hover:text-navy-900 font-medium transition-colors" data-en="About" data-ta="எங்களை பற்றி">About</a>
-                    <a href="#programs" class="text-gray-600 hover:text-navy-900 font-medium transition-colors" data-en="Programs" data-ta="திட்டங்கள்">Programs</a>
-                    <a href="#campus" class="text-gray-600 hover:text-navy-900 font-medium transition-colors" data-en="Campus" data-ta="வளாகம்">Campus</a>
-                    <a href="#testimonials" class="text-gray-600 hover:text-navy-900 font-medium transition-colors" data-en="Testimonials" data-ta="சான்றுகள்">Testimonials</a>
-                    <a href="#contact" class="text-gray-600 hover:text-navy-900 font-medium transition-colors" data-en="Contact" data-ta="தொடர்பு">Contact</a>
+                    <a href="#about" class="text-gray-600 hover:text-maroon-900 font-medium transition-colors" data-en="About" data-ta="எங்களை பற்றி">About</a>
+                    <a href="#academics" class="text-gray-600 hover:text-maroon-900 font-medium transition-colors" data-en="Academics" data-ta="கல்வி">Academics</a>
+                    <a href="#achievements" class="text-gray-600 hover:text-maroon-900 font-medium transition-colors" data-en="Achievements" data-ta="சாதனைகள்">Achievements</a>
+                    <a href="#facilities" class="text-gray-600 hover:text-maroon-900 font-medium transition-colors" data-en="Facilities" data-ta="வசதிகள்">Facilities</a>
+                    <a href="#contact" class="text-gray-600 hover:text-maroon-900 font-medium transition-colors" data-en="Contact" data-ta="தொடர்பு">Contact</a>
                 </nav>
                 
                 <div class="hidden lg:flex items-center gap-4">
-                    <div class="flex rounded-full border border-gray-200 p-0.5">
+                    <div class="flex rounded-full border border-maroon-200 p-0.5 bg-cream-100">
                         <button class="lang-btn active px-3 py-1.5 rounded-full text-xs font-semibold transition-all" data-lang="en">EN</button>
-                        <button class="lang-btn px-3 py-1.5 rounded-full text-xs font-semibold text-gray-500 transition-all" data-lang="ta">தமிழ்</button>
+                        <button class="lang-btn px-3 py-1.5 rounded-full text-xs font-semibold text-maroon-700 transition-all" data-lang="ta">தமிழ்</button>
                     </div>
-                    <a href="#admissions" class="bg-navy-900 hover:bg-navy-800 text-white px-6 py-2.5 rounded-lg font-semibold transition-all">
-                        <span data-en="Apply Now" data-ta="விண்ணப்பிக்கவும்">Apply Now</span>
+                    <a href="#admissions" class="bg-maroon-900 hover:bg-maroon-800 text-white px-5 py-2.5 rounded-lg font-semibold transition-all text-sm">
+                        <span data-en="Admissions 2026-27" data-ta="சேர்க்கை 2026-27">Admissions 2026-27</span>
                     </a>
                 </div>
                 
                 <div class="flex items-center gap-3 lg:hidden">
-                    <div class="flex rounded-full border border-gray-200 p-0.5">
+                    <div class="flex rounded-full border border-maroon-200 p-0.5 bg-cream-100">
                         <button class="lang-btn active px-2 py-1 rounded-full text-xs font-semibold" data-lang="en">EN</button>
-                        <button class="lang-btn px-2 py-1 rounded-full text-xs font-semibold text-gray-500" data-lang="ta">த</button>
+                        <button class="lang-btn px-2 py-1 rounded-full text-xs font-semibold text-maroon-700" data-lang="ta">த</button>
                     </div>
-                    <button id="menuBtn" class="p-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+                    <button id="menuBtn" class="p-2 text-maroon-900"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
                 </div>
             </div>
         </div>
@@ -111,505 +126,508 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu fixed inset-0 bg-white z-50 lg:hidden" id="mobileMenu">
             <div class="flex flex-col h-full">
-                <div class="flex justify-between items-center h-20 px-4 border-b border-gray-100">
-                    <span class="font-display font-bold text-xl text-navy-900">SKV School</span>
+                <div class="flex justify-between items-center h-20 px-4 border-b border-cream-200">
+                    <span class="font-display font-bold text-xl text-maroon-900">SKV HSS</span>
                     <button id="closeMenu" class="p-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
                 </div>
                 <nav class="flex-1 px-4 py-6 space-y-1">
-                    <a href="#about" class="nav-link block py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-xl" data-en="About Us" data-ta="எங்களை பற்றி">About Us</a>
-                    <a href="#programs" class="nav-link block py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-xl" data-en="Programs" data-ta="திட்டங்கள்">Programs</a>
-                    <a href="#campus" class="nav-link block py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-xl" data-en="Campus" data-ta="வளாகம்">Campus</a>
-                    <a href="#testimonials" class="nav-link block py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-xl" data-en="Testimonials" data-ta="சான்றுகள்">Testimonials</a>
-                    <a href="#contact" class="nav-link block py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-xl" data-en="Contact" data-ta="தொடர்பு">Contact</a>
+                    <a href="#about" class="nav-link block py-3 px-4 text-lg font-medium text-gray-700 hover:bg-cream-100 rounded-xl" data-en="About Us" data-ta="எங்களை பற்றி">About Us</a>
+                    <a href="#academics" class="nav-link block py-3 px-4 text-lg font-medium text-gray-700 hover:bg-cream-100 rounded-xl" data-en="Academics" data-ta="கல்வி">Academics</a>
+                    <a href="#achievements" class="nav-link block py-3 px-4 text-lg font-medium text-gray-700 hover:bg-cream-100 rounded-xl" data-en="Achievements" data-ta="சாதனைகள்">Achievements</a>
+                    <a href="#facilities" class="nav-link block py-3 px-4 text-lg font-medium text-gray-700 hover:bg-cream-100 rounded-xl" data-en="Facilities" data-ta="வசதிகள்">Facilities</a>
+                    <a href="#contact" class="nav-link block py-3 px-4 text-lg font-medium text-gray-700 hover:bg-cream-100 rounded-xl" data-en="Contact" data-ta="தொடர்பு">Contact</a>
                 </nav>
-                <div class="p-4 border-t border-gray-100">
-                    <a href="#admissions" class="nav-link block w-full bg-navy-900 text-white text-center py-4 rounded-xl font-semibold"><span data-en="Apply for Admission" data-ta="சேர்க்கைக்கு விண்ணப்பிக்கவும்">Apply for Admission</span></a>
+                <div class="p-4 border-t border-cream-200">
+                    <a href="#admissions" class="nav-link block w-full bg-maroon-900 text-white text-center py-4 rounded-xl font-semibold"><span data-en="Apply for Admission" data-ta="சேர்க்கைக்கு விண்ணப்பிக்கவும்">Apply for Admission</span></a>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 min-h-[90vh] flex items-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-            <div class="max-w-3xl">
-                <div class="gold-line mb-8"></div>
-                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" data-en="Where Excellence Meets Opportunity" data-ta="சிறப்பு வாய்ப்பை சந்திக்கும் இடம்">
-                    Where Excellence Meets Opportunity
-                </h1>
-                <p class="text-xl text-blue-100 mb-10 leading-relaxed" data-en="For over 25 years, SKV School has been shaping future leaders through world-class education, innovative teaching, and holistic development." data-ta="25 ஆண்டுகளுக்கும் மேலாக, SKV பள்ளி உலகத்தரம் வாய்ந்த கல்வி, புதுமையான கற்பித்தல் மற்றும் முழுமையான வளர்ச்சி மூலம் எதிர்கால தலைவர்களை உருவாக்கி வருகிறது.">
-                    For over 25 years, SKV School has been shaping future leaders through world-class education, innovative teaching, and holistic development.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#admissions" class="inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-navy-900 px-8 py-4 rounded-lg font-bold text-lg transition-all">
-                        <span data-en="Start Your Journey" data-ta="உங்கள் பயணத்தைத் தொடங்குங்கள்">Start Your Journey</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                    </a>
-                    <a href="#about" class="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg transition-all">
-                        <span data-en="Explore Campus" data-ta="வளாகத்தை ஆராயுங்கள்">Explore Campus</span>
-                    </a>
-                </div>
-            </div>
+    <section class="relative bg-gradient-to-br from-maroon-900 via-maroon-800 to-maroon-900 min-h-[85vh] flex items-center overflow-hidden">
+        <!-- Decorative pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;40&quot; height=&quot;40&quot; viewBox=&quot;0 0 40 40&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M20 20.5V18H0v-2h20v-2.5a2.5 2.5 0 015 0V16h15v2H25v2.5a2.5 2.5 0 01-5 0z&quot; fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot; fill-rule=&quot;evenodd&quot;/%3E%3C/svg%3E');"></div>
         </div>
         
-        <!-- Accreditation badges -->
-        <div class="absolute bottom-8 right-8 hidden lg:flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
-            <div class="text-right">
-                <div class="text-gold-400 font-semibold text-sm">CBSE Affiliated</div>
-                <div class="text-white/70 text-xs">Affiliation No. 830XXX</div>
-            </div>
-            <div class="w-px h-10 bg-white/20"></div>
-            <div class="text-right">
-                <div class="text-gold-400 font-semibold text-sm">ISO Certified</div>
-                <div class="text-white/70 text-xs">9001:2015</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        <span class="text-cream-200 text-sm font-medium" data-en="Admissions Open for 2026-27" data-ta="2026-27 சேர்க்கை திறந்துள்ளது">Admissions Open for 2026-27</span>
+                    </div>
+                    
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
+                        <span data-en="S.K.Velayutham" data-ta="ச.க.வேலாயுதம்">S.K.Velayutham</span>
+                    </h1>
+                    <h2 class="font-display text-2xl sm:text-3xl text-cream-300 mb-6" data-en="Higher Secondary School" data-ta="மேனிலைப்பள்ளி">Higher Secondary School</h2>
+                    
+                    <p class="text-lg text-cream-100 mb-8 leading-relaxed" data-en="Nurturing young minds since 1960. A government-aided institution committed to academic excellence and character building in the heart of Kurinjipadi." data-ta="1960 முதல் இளம் மனங்களை வளர்த்து வருகிறோம். குறிஞ்சிப்பாடியின் மையத்தில் கல்வி சிறப்பு மற்றும் குணநலன் வளர்ப்புக்கு அர்ப்பணிக்கப்பட்ட அரசு உதவி பெறும் நிறுவனம்.">
+                        Nurturing young minds since 1960. A government-aided institution committed to academic excellence and character building in the heart of Kurinjipadi.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                        <a href="#admissions" class="inline-flex items-center justify-center gap-2 bg-cream-300 hover:bg-white text-maroon-900 px-6 py-3.5 rounded-lg font-bold transition-all">
+                            <span data-en="Apply Now" data-ta="இப்போதே விண்ணப்பிக்கவும்">Apply Now</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                        <a href="#about" class="inline-flex items-center justify-center gap-2 border-2 border-cream-300/50 text-cream-100 hover:bg-white/10 px-6 py-3.5 rounded-lg font-semibold transition-all">
+                            <span data-en="Our Legacy" data-ta="எங்கள் பாரம்பரியம்">Our Legacy</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl sm:text-4xl font-bold text-cream-300">65+</div>
+                            <div class="text-cream-400 text-sm" data-en="Years" data-ta="ஆண்டுகள்">Years</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl sm:text-4xl font-bold text-cream-300">LKG-12</div>
+                            <div class="text-cream-400 text-sm" data-en="Grades" data-ta="வகுப்புகள்">Grades</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl sm:text-4xl font-bold text-cream-300">State</div>
+                            <div class="text-cream-400 text-sm" data-en="Board" data-ta="வாரியம்">Board</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- School Image -->
+                <div class="relative hidden lg:block">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-cream-300/20 to-transparent rounded-3xl blur-2xl"></div>
+                    <div class="relative rounded-2xl overflow-hidden border-4 border-cream-300/30 shadow-2xl">
+                        <img src="https://danusharun.github.io/sunrise-international-school/school-gate.jpg" alt="SKV School Entrance Gate" class="w-full h-auto object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden bg-gradient-to-br from-maroon-800 to-maroon-900 aspect-[4/3] items-center justify-center">
+                            <div class="text-center p-8">
+                                <div class="w-24 h-24 bg-cream-300/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="tamil-text text-cream-300 text-4xl font-bold">SKV</span>
+                                </div>
+                                <p class="tamil-text text-cream-300 text-lg">ச.க.வேலாயுதம் மேனிலைப்பள்ளி</p>
+                                <p class="text-cream-400 text-sm mt-2">குறிஞ்சிப்பாடி - 607302</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Bar -->
-    <section class="bg-white py-12 lg:py-0 lg:-mt-16 relative z-20">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-2xl shadow-2xl p-8 lg:p-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="text-4xl lg:text-5xl font-bold text-navy-900">25+</div>
-                    <p class="text-gray-500 mt-1" data-en="Years of Excellence" data-ta="சிறப்பான ஆண்டுகள்">Years of Excellence</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl lg:text-5xl font-bold text-navy-900">2500+</div>
-                    <p class="text-gray-500 mt-1" data-en="Students" data-ta="மாணவர்கள்">Students</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl lg:text-5xl font-bold text-navy-900">98%</div>
-                    <p class="text-gray-500 mt-1" data-en="Board Results" data-ta="போர்டு முடிவுகள்">Board Results</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl lg:text-5xl font-bold text-navy-900">150+</div>
-                    <p class="text-gray-500 mt-1" data-en="Expert Faculty" data-ta="நிபுணர் ஆசிரியர்கள்">Expert Faculty</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recognized & Accredited By (Logo Slider) -->
-    <section class="py-16 bg-gray-50 border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-            <p class="text-center text-gray-400 text-sm uppercase tracking-wider font-semibold" data-en="Recognized & Accredited By" data-ta="அங்கீகரிக்கப்பட்டது">Recognized & Accredited By</p>
+    <!-- Recognition Banner -->
+    <section class="py-10 bg-white border-y border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+            <p class="text-center text-gray-400 text-sm uppercase tracking-wider font-semibold" data-en="Recognized & Affiliated" data-ta="அங்கீகரிக்கப்பட்டது மற்றும் இணைக்கப்பட்டது">Recognized & Affiliated</p>
         </div>
         <div class="logo-slider">
             <div class="logo-track">
-                <div class="flex items-center gap-3 text-gray-400 hover:text-navy-900 transition-colors px-6">
+                <div class="flex items-center gap-3 text-gray-400 hover:text-maroon-900 transition-colors px-6">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    <span class="font-bold whitespace-nowrap text-lg" data-en="CBSE Affiliated" data-ta="CBSE இணைப்பு">CBSE Affiliated</span>
+                    <span class="font-bold whitespace-nowrap text-lg" data-en="TN State Board" data-ta="TN அரசு வாரியம்">TN State Board</span>
                 </div>
-                <div class="flex items-center gap-3 text-gray-400 hover:text-navy-900 transition-colors px-6">
+                <div class="flex items-center gap-3 text-gray-400 hover:text-maroon-900 transition-colors px-6">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span class="font-bold whitespace-nowrap text-lg">ISO 9001:2015</span>
+                    <span class="font-bold whitespace-nowrap text-lg" data-en="Govt. Aided" data-ta="அரசு உதவி">Govt. Aided</span>
                 </div>
-                <div class="flex items-center gap-3 text-gray-400 hover:text-navy-900 transition-colors px-6">
+                <div class="flex items-center gap-3 text-gray-400 hover:text-maroon-900 transition-colors px-6">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-                    <span class="font-bold whitespace-nowrap text-lg" data-en="Green School Award" data-ta="பசுமை பள்ளி விருது">Green School Award</span>
+                    <span class="font-bold whitespace-nowrap text-lg" data-en="Est. 1960" data-ta="நிறுவப்பட்டது 1960">Est. 1960</span>
                 </div>
-                <div class="flex items-center gap-3 text-gray-400 hover:text-navy-900 transition-colors px-6">
-                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                    <span class="font-bold whitespace-nowrap text-lg" data-en="STEM Excellence" data-ta="STEM சிறப்பு">STEM Excellence</span>
-                </div>
-                <div class="flex items-center gap-3 text-gray-400 hover:text-navy-900 transition-colors px-6">
-                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-                    <span class="font-bold whitespace-nowrap text-lg" data-en="National Award 2024" data-ta="தேசிய விருது 2024">National Award 2024</span>
-                </div>
-                <div class="flex items-center gap-3 text-gray-400 hover:text-navy-900 transition-colors px-6">
+                <div class="flex items-center gap-3 text-gray-400 hover:text-maroon-900 transition-colors px-6">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
-                    <span class="font-bold whitespace-nowrap text-lg" data-en="Sports Champion" data-ta="விளையாட்டு சாம்பியன்">Sports Champion</span>
+                    <span class="font-bold whitespace-nowrap text-lg" data-en="National Basketball" data-ta="தேசிய கூடைப்பந்து">National Basketball</span>
                 </div>
-                <!-- Duplicate for infinite scroll -->
-                <div class="flex items-center gap-3 text-gray-400 hover:text-navy-900 transition-colors px-6">
+                <div class="flex items-center gap-3 text-gray-400 hover:text-maroon-900 transition-colors px-6">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                    <span class="font-bold whitespace-nowrap text-lg" data-en="LKG to XII" data-ta="LKG முதல் XII வரை">LKG to XII</span>
+                </div>
+                <div class="flex items-center gap-3 text-gray-400 hover:text-maroon-900 transition-colors px-6">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+                    <span class="font-bold whitespace-nowrap text-lg" data-en="Kurinjipadi" data-ta="குறிஞ்சிப்பாடி">Kurinjipadi</span>
+                </div>
+                <!-- Duplicates for infinite scroll -->
+                <div class="flex items-center gap-3 text-gray-400 hover:text-maroon-900 transition-colors px-6">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    <span class="font-bold whitespace-nowrap text-lg" data-en="CBSE Affiliated" data-ta="CBSE இணைப்பு">CBSE Affiliated</span>
+                    <span class="font-bold whitespace-nowrap text-lg" data-en="TN State Board" data-ta="TN அரசு வாரியம்">TN State Board</span>
                 </div>
-                <div class="flex items-center gap-3 text-gray-400 hover:text-navy-900 transition-colors px-6">
+                <div class="flex items-center gap-3 text-gray-400 hover:text-maroon-900 transition-colors px-6">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span class="font-bold whitespace-nowrap text-lg">ISO 9001:2015</span>
+                    <span class="font-bold whitespace-nowrap text-lg" data-en="Govt. Aided" data-ta="அரசு உதவி">Govt. Aided</span>
                 </div>
-                <div class="flex items-center gap-3 text-gray-400 hover:text-navy-900 transition-colors px-6">
+                <div class="flex items-center gap-3 text-gray-400 hover:text-maroon-900 transition-colors px-6">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-                    <span class="font-bold whitespace-nowrap text-lg" data-en="Green School Award" data-ta="பசுமை பள்ளி விருது">Green School Award</span>
+                    <span class="font-bold whitespace-nowrap text-lg" data-en="Est. 1960" data-ta="நிறுவப்பட்டது 1960">Est. 1960</span>
                 </div>
-                <div class="flex items-center gap-3 text-gray-400 hover:text-navy-900 transition-colors px-6">
-                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                    <span class="font-bold whitespace-nowrap text-lg" data-en="STEM Excellence" data-ta="STEM சிறப்பு">STEM Excellence</span>
-                </div>
-                <div class="flex items-center gap-3 text-gray-400 hover:text-navy-900 transition-colors px-6">
-                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-                    <span class="font-bold whitespace-nowrap text-lg" data-en="National Award 2024" data-ta="தேசிய விருது 2024">National Award 2024</span>
-                </div>
-                <div class="flex items-center gap-3 text-gray-400 hover:text-navy-900 transition-colors px-6">
+                <div class="flex items-center gap-3 text-gray-400 hover:text-maroon-900 transition-colors px-6">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
-                    <span class="font-bold whitespace-nowrap text-lg" data-en="Sports Champion" data-ta="விளையாட்டு சாம்பியன்">Sports Champion</span>
+                    <span class="font-bold whitespace-nowrap text-lg" data-en="National Basketball" data-ta="தேசிய கூடைப்பந்து">National Basketball</span>
+                </div>
+                <div class="flex items-center gap-3 text-gray-400 hover:text-maroon-900 transition-colors px-6">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                    <span class="font-bold whitespace-nowrap text-lg" data-en="LKG to XII" data-ta="LKG முதல் XII வரை">LKG to XII</span>
+                </div>
+                <div class="flex items-center gap-3 text-gray-400 hover:text-maroon-900 transition-colors px-6">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+                    <span class="font-bold whitespace-nowrap text-lg" data-en="Kurinjipadi" data-ta="குறிஞ்சிப்பாடி">Kurinjipadi</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 lg:py-28 bg-white">
+    <section id="about" class="py-20 bg-cream-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div>
-                    <div class="gold-line mb-6"></div>
-                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-navy-900 mb-6" data-en="A Legacy of Educational Excellence" data-ta="கல்வி சிறப்பின் மரபு">
-                        A Legacy of Educational Excellence
+                    <div class="inline-block bg-maroon-100 text-maroon-900 text-sm font-semibold px-4 py-1.5 rounded-full mb-4" data-en="Our Heritage" data-ta="எங்கள் பாரம்பரியம்">Our Heritage</div>
+                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-maroon-900 mb-6" data-en="65 Years of Shaping Futures" data-ta="65 ஆண்டுகள் எதிர்காலங்களை வடிவமைத்தல்">
+                        65 Years of Shaping Futures
                     </h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6" data-en="Founded in 1998, SKV School has established itself as one of Bangalore's most trusted educational institutions. Our commitment to academic rigor, combined with a nurturing environment, has helped thousands of students achieve their dreams." data-ta="1998 இல் நிறுவப்பட்ட SKV பள்ளி, பெங்களூரின் மிகவும் நம்பகமான கல்வி நிறுவனங்களில் ஒன்றாக தன்னை நிலைநிறுத்திக் கொண்டுள்ளது.">
-                        Founded in 1998, SKV School has established itself as one of Bangalore's most trusted educational institutions. Our commitment to academic rigor, combined with a nurturing environment, has helped thousands of students achieve their dreams.
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6" data-en="Founded in 1960 by the visionary S.K.Velayutham, our school has been a beacon of education in Kurinjipadi for over six decades. As a government-aided institution, we provide quality education accessible to all." data-ta="1960 இல் தொலைநோக்கு பார்வையாளர் ச.க.வேலாயுதம் அவர்களால் நிறுவப்பட்ட எங்கள் பள்ளி, ஆறு தசாப்தங்களுக்கும் மேலாக குறிஞ்சிப்பாடியில் கல்வியின் கலங்கரை விளக்கமாக இருந்து வருகிறது.">
+                        Founded in 1960 by the visionary S.K.Velayutham, our school has been a beacon of education in Kurinjipadi for over six decades. As a government-aided institution, we provide quality education accessible to all.
                     </p>
-                    <p class="text-gray-500 leading-relaxed mb-8" data-en="We believe in developing well-rounded individuals who excel not just academically, but also in character, creativity, and leadership." data-ta="கல்வியில் மட்டுமல்ல, குணம், படைப்பாற்றல் மற்றும் தலைமைத்துவத்திலும் சிறந்து விளங்கும் முழுமையான நபர்களை உருவாக்குவதில் நாங்கள் நம்புகிறோம்.">
-                        We believe in developing well-rounded individuals who excel not just academically, but also in character, creativity, and leadership.
+                    <p class="text-gray-500 leading-relaxed mb-8" data-en="Rooted in the rich cultural heritage of Kurinjipadi - a town famous for its handloom traditions - we instill values of hard work, dedication, and excellence in every student who walks through our gates." data-ta="கைத்தறி பாரம்பரியங்களுக்கு புகழ்பெற்ற குறிஞ்சிப்பாடியின் செழுமையான கலாச்சார பாரம்பரியத்தில் வேரூன்றிய நாங்கள், எங்கள் வாசலில் நுழையும் ஒவ்வொரு மாணவரிடமும் கடின உழைப்பு, அர்ப்பணிப்பு மற்றும் சிறப்பு ஆகிய மதிப்புகளை புகுத்துகிறோம்.">
+                        Rooted in the rich cultural heritage of Kurinjipadi - a town famous for its handloom traditions - we instill values of hard work, dedication, and excellence in every student who walks through our gates.
                     </p>
                     
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-navy-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-5 h-5 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            </div>
-                            <span class="font-medium text-gray-700" data-en="CBSE Curriculum" data-ta="CBSE பாடத்திட்டம்">CBSE Curriculum</span>
+                        <div class="heritage-card rounded-xl p-5">
+                            <div class="stat-number text-3xl font-bold">1960</div>
+                            <p class="text-gray-600 text-sm mt-1" data-en="Year Established" data-ta="நிறுவப்பட்ட ஆண்டு">Year Established</p>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-gold-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-5 h-5 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-                            </div>
-                            <span class="font-medium text-gray-700" data-en="Expert Faculty" data-ta="நிபுணர் ஆசிரியர்கள்">Expert Faculty</span>
+                        <div class="heritage-card rounded-xl p-5">
+                            <div class="stat-number text-3xl font-bold">10,000+</div>
+                            <p class="text-gray-600 text-sm mt-1" data-en="Alumni Network" data-ta="முன்னாள் மாணவர் வலைப்பின்னல்">Alumni Network</p>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                            </div>
-                            <span class="font-medium text-gray-700" data-en="5-Acre Campus" data-ta="5 ஏக்கர் வளாகம்">5-Acre Campus</span>
+                        <div class="heritage-card rounded-xl p-5">
+                            <div class="stat-number text-3xl font-bold">50+</div>
+                            <p class="text-gray-600 text-sm mt-1" data-en="Dedicated Teachers" data-ta="அர்ப்பணிப்புள்ள ஆசிரியர்கள்">Dedicated Teachers</p>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-                            </div>
-                            <span class="font-medium text-gray-700" data-en="ISO Certified" data-ta="ISO சான்றிதழ்">ISO Certified</span>
+                        <div class="heritage-card rounded-xl p-5">
+                            <div class="stat-number text-3xl font-bold">State</div>
+                            <p class="text-gray-600 text-sm mt-1" data-en="Board Affiliated" data-ta="வாரிய இணைப்பு">Board Affiliated</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="relative">
-                    <div class="bg-gradient-to-br from-navy-900 to-navy-700 rounded-2xl p-8 lg:p-12 text-white">
-                        <div class="w-16 h-16 bg-gold-500 rounded-2xl flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    <div class="heritage-card rounded-2xl p-8 lg:p-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-maroon-900 rounded-full flex items-center justify-center">
+                                <svg class="w-8 h-8 text-cream-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-xl font-bold text-maroon-900" data-en="Our Vision" data-ta="எங்கள் தொலைநோக்கு">Our Vision</h3>
+                                <p class="text-maroon-600 text-sm">ச.க.வேலாயுதம்</p>
+                            </div>
                         </div>
-                        <h3 class="font-display text-2xl font-bold mb-4" data-en="Our Mission" data-ta="எங்கள் நோக்கம்">Our Mission</h3>
-                        <p class="text-blue-100 leading-relaxed" data-en="To nurture confident, compassionate, and capable individuals prepared to lead and excel in a global society." data-ta="உலகளாவிய சமூகத்தில் தலைமை தாங்கவும் சிறந்து விளங்கவும் தயாராக உள்ள நம்பிக்கையான, இரக்கமுள்ள மற்றும் திறமையான நபர்களை வளர்ப்பது.">
-                            To nurture confident, compassionate, and capable individuals prepared to lead and excel in a global society.
-                        </p>
+                        <blockquote class="text-gray-700 text-lg italic leading-relaxed border-l-4 border-maroon-300 pl-4" data-en="&quot;To provide quality education that transforms lives and builds responsible citizens who contribute to society.&quot;" data-ta="&quot;வாழ்க்கையை மாற்றும் மற்றும் சமூகத்திற்கு பங்களிக்கும் பொறுப்பான குடிமக்களை உருவாக்கும் தரமான கல்வியை வழங்குவது.&quot;">
+                            "To provide quality education that transforms lives and builds responsible citizens who contribute to society."
+                        </blockquote>
+                        <div class="mt-6 pt-6 border-t border-cream-300">
+                            <p class="text-gray-500 text-sm" data-en="Tamil Nadu State Board • Government Aided Institution" data-ta="தமிழ்நாடு அரசு வாரியம் • அரசு உதவி நிறுவனம்">Tamil Nadu State Board • Government Aided Institution</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Programs Section -->
-    <section id="programs" class="py-20 lg:py-28 bg-gray-50">
+    <!-- Academics Section -->
+    <section id="academics" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <div class="gold-line mx-auto mb-6"></div>
-                <h2 class="font-display text-3xl lg:text-4xl font-bold text-navy-900 mb-4" data-en="Academic Programs" data-ta="கல்வித் திட்டங்கள்">
-                    Academic Programs
+                <div class="inline-block bg-maroon-100 text-maroon-900 text-sm font-semibold px-4 py-1.5 rounded-full mb-4" data-en="Academics" data-ta="கல்வி">Academics</div>
+                <h2 class="font-display text-3xl lg:text-4xl font-bold text-maroon-900 mb-4" data-en="Complete Education Journey" data-ta="முழுமையான கல்விப் பயணம்">
+                    Complete Education Journey
                 </h2>
-                <p class="text-gray-600 text-lg" data-en="Comprehensive CBSE curriculum designed to prepare students for success." data-ta="மாணவர்களை வெற்றிக்குத் தயார்படுத்த வடிவமைக்கப்பட்ட விரிவான CBSE பாடத்திட்டம்.">Comprehensive CBSE curriculum designed to prepare students for success.</p>
+                <p class="text-gray-600 text-lg" data-en="From LKG to Class XII - Tamil Nadu State Board curriculum with focus on holistic development." data-ta="LKG முதல் வகுப்பு XII வரை - முழுமையான வளர்ச்சியில் கவனம் செலுத்தும் தமிழ்நாடு அரசு வாரிய பாடத்திட்டம்.">From LKG to Class XII - Tamil Nadu State Board curriculum with focus on holistic development.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Primary -->
+                <div class="heritage-card rounded-2xl p-8 group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div class="text-maroon-600 text-sm font-semibold mb-2" data-en="Foundation" data-ta="அடித்தளம்">Foundation</div>
+                    <h3 class="font-display text-2xl font-bold text-maroon-900 mb-2" data-en="Primary School" data-ta="தொடக்கப் பள்ளி">Primary School</h3>
+                    <p class="text-gray-500 text-sm mb-4">LKG - Class V</p>
+                    <p class="text-gray-600 mb-6" data-en="Strong foundation in Tamil, English, and Mathematics through activity-based learning." data-ta="செயல்பாட்டு அடிப்படையிலான கற்றல் மூலம் தமிழ், ஆங்கிலம் மற்றும் கணிதத்தில் வலுவான அடித்தளம்.">Strong foundation in Tamil, English, and Mathematics through activity-based learning.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span data-en="Play-based learning" data-ta="விளையாட்டு அடிப்படையிலான கற்றல்">Play-based learning</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span data-en="Bilingual instruction" data-ta="இருமொழி கற்பித்தல்">Bilingual instruction</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span data-en="Arts & crafts" data-ta="கலை & கைவினை">Arts & crafts</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Middle -->
+                <div class="heritage-card rounded-2xl p-8 group ring-2 ring-maroon-300 relative">
+                    <div class="absolute -top-3 right-6 bg-maroon-900 text-cream-300 text-xs font-bold px-3 py-1 rounded-full" data-en="Core Years" data-ta="முக்கிய ஆண்டுகள்">Core Years</div>
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    </div>
+                    <div class="text-maroon-600 text-sm font-semibold mb-2" data-en="Development" data-ta="வளர்ச்சி">Development</div>
+                    <h3 class="font-display text-2xl font-bold text-maroon-900 mb-2" data-en="Middle School" data-ta="நடுநிலைப் பள்ளி">Middle School</h3>
+                    <p class="text-gray-500 text-sm mb-4">Class VI - VIII</p>
+                    <p class="text-gray-600 mb-6" data-en="Building analytical skills and preparing for higher studies with comprehensive curriculum." data-ta="விரிவான பாடத்திட்டத்துடன் பகுப்பாய்வு திறன்களை வளர்த்து உயர்கல்விக்கு தயாரித்தல்.">Building analytical skills and preparing for higher studies with comprehensive curriculum.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span data-en="Science & Social studies" data-ta="அறிவியல் & சமூக அறிவியல்">Science & Social studies</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span data-en="Computer education" data-ta="கணினிக் கல்வி">Computer education</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span data-en="Sports & physical ed" data-ta="விளையாட்டு & உடற்கல்வி">Sports & physical ed</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Higher Secondary -->
+                <div class="heritage-card rounded-2xl p-8 group">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                    </div>
+                    <div class="text-maroon-600 text-sm font-semibold mb-2" data-en="Board Exams" data-ta="போர்டு தேர்வுகள்">Board Exams</div>
+                    <h3 class="font-display text-2xl font-bold text-maroon-900 mb-2" data-en="Higher Secondary" data-ta="மேல்நிலைப் பள்ளி">Higher Secondary</h3>
+                    <p class="text-gray-500 text-sm mb-4">Class IX - XII</p>
+                    <p class="text-gray-600 mb-6" data-en="Preparing students for board exams and competitive entrance tests with specialized streams." data-ta="சிறப்புப் பிரிவுகளுடன் போர்டு தேர்வுகள் மற்றும் போட்டி நுழைவுத் தேர்வுகளுக்கு மாணவர்களைத் தயாரித்தல்.">Preparing students for board exams and competitive entrance tests with specialized streams.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span data-en="Science & Commerce" data-ta="அறிவியல் & வணிகவியல்">Science & Commerce</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span data-en="Career guidance" data-ta="தொழில் வழிகாட்டுதல்">Career guidance</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span data-en="Board exam prep" data-ta="போர்டு தேர்வு தயாரிப்பு">Board exam prep</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section - Basketball Focus -->
+    <section id="achievements" class="py-20 bg-maroon-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-block bg-cream-300/20 text-cream-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-4" data-en="Pride of SKV" data-ta="SKV-ன் பெருமை">Pride of SKV</div>
+                <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-4" data-en="Sports Excellence" data-ta="விளையாட்டு சிறப்பு">
+                    Sports Excellence
+                </h2>
+                <p class="text-cream-200 text-lg" data-en="Our basketball team has produced players who represent at the national level." data-ta="எங்கள் கூடைப்பந்து அணி தேசிய அளவில் பிரதிநிதித்துவப்படுத்தும் வீரர்களை உருவாக்கியுள்ளது.">Our basketball team has produced players who represent at the national level.</p>
             </div>
             
             <div class="grid lg:grid-cols-3 gap-8">
-                <div class="premium-card p-8">
-                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
+                    <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/></svg>
                     </div>
-                    <div class="text-gold-600 text-sm font-semibold mb-2" data-en="Foundation Years" data-ta="அடித்தள ஆண்டுகள்">Foundation Years</div>
-                    <h3 class="font-display text-2xl font-bold text-navy-900 mb-2" data-en="Primary School" data-ta="தொடக்கப் பள்ளி">Primary School</h3>
-                    <p class="text-gray-500 text-sm mb-4" data-en="Grades K-5" data-ta="வகுப்புகள் K-5">Grades K-5</p>
-                    <p class="text-gray-600 mb-6" data-en="Building strong foundations through play-based and experiential learning." data-ta="விளையாட்டு அடிப்படையிலான மற்றும் அனுபவ கற்றல் மூலம் வலுவான அடித்தளங்களை உருவாக்குதல்.">Building strong foundations through play-based and experiential learning.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3 text-gray-700 text-sm">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span data-en="Activity-based learning" data-ta="செயல்பாட்டு அடிப்படையிலான கற்றல்">Activity-based learning</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-700 text-sm">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span data-en="Creative arts & music" data-ta="படைப்பு கலை & இசை">Creative arts & music</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-700 text-sm">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span data-en="Language development" data-ta="மொழி வளர்ச்சி">Language development</span>
-                        </li>
-                    </ul>
+                    <h3 class="font-display text-2xl font-bold text-cream-300 mb-2" data-en="Basketball" data-ta="கூடைப்பந்து">Basketball</h3>
+                    <p class="text-cream-400 mb-4" data-en="National Level Players" data-ta="தேசிய அளவிலான வீரர்கள்">National Level Players</p>
+                    <p class="text-cream-100 text-sm leading-relaxed" data-en="Our basketball program has trained students who have gone on to represent at state and national championships." data-ta="எங்கள் கூடைப்பந்து திட்டம் மாநில மற்றும் தேசிய சாம்பியன்ஷிப்களில் பிரதிநிதித்துவப்படுத்திய மாணவர்களை பயிற்சி அளித்துள்ளது.">
+                        Our basketball program has trained students who have gone on to represent at state and national championships.
+                    </p>
                 </div>
                 
-                <div class="premium-card p-8 ring-2 ring-gold-400 relative">
-                    <div class="absolute -top-3 right-6 bg-gold-500 text-navy-900 text-xs font-bold px-3 py-1 rounded-full" data-en="Most Popular" data-ta="மிகவும் பிரபலமான">Most Popular</div>
-                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
+                    <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
                     </div>
-                    <div class="text-gold-600 text-sm font-semibold mb-2" data-en="Building Excellence" data-ta="சிறப்பை உருவாக்குதல்">Building Excellence</div>
-                    <h3 class="font-display text-2xl font-bold text-navy-900 mb-2" data-en="Middle School" data-ta="நடுநிலைப் பள்ளி">Middle School</h3>
-                    <p class="text-gray-500 text-sm mb-4" data-en="Grades 6-8" data-ta="வகுப்புகள் 6-8">Grades 6-8</p>
-                    <p class="text-gray-600 mb-6" data-en="Developing critical thinking and academic excellence with STEM focus." data-ta="STEM கவனத்துடன் விமர்சன சிந்தனை மற்றும் கல்வி சிறப்பை வளர்த்தல்.">Developing critical thinking and academic excellence with STEM focus.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3 text-gray-700 text-sm">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span data-en="Advanced STEM curriculum" data-ta="மேம்பட்ட STEM பாடத்திட்டம்">Advanced STEM curriculum</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-700 text-sm">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span data-en="Leadership programs" data-ta="தலைமைத்துவ திட்டங்கள்">Leadership programs</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-700 text-sm">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span data-en="Sports & extracurriculars" data-ta="விளையாட்டு & இணை பாடத்திட்டம்">Sports & extracurriculars</span>
-                        </li>
-                    </ul>
+                    <h3 class="font-display text-2xl font-bold text-cream-300 mb-2" data-en="Academics" data-ta="கல்வி">Academics</h3>
+                    <p class="text-cream-400 mb-4" data-en="Board Exam Results" data-ta="போர்டு தேர்வு முடிவுகள்">Board Exam Results</p>
+                    <p class="text-cream-100 text-sm leading-relaxed" data-en="Consistent track record of excellent board exam results with many students securing top ranks in the district." data-ta="மாவட்டத்தில் பல மாணவர்கள் முதல் இடங்களைப் பெற்று சிறந்த போர்டு தேர்வு முடிவுகளின் நிலையான சாதனை.">
+                        Consistent track record of excellent board exam results with many students securing top ranks in the district.
+                    </p>
                 </div>
                 
-                <div class="premium-card p-8">
-                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
+                    <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                     </div>
-                    <div class="text-gold-600 text-sm font-semibold mb-2" data-en="College Readiness" data-ta="கல்லூரி தயார்நிலை">College Readiness</div>
-                    <h3 class="font-display text-2xl font-bold text-navy-900 mb-2" data-en="High School" data-ta="உயர்நிலைப் பள்ளி">High School</h3>
-                    <p class="text-gray-500 text-sm mb-4" data-en="Grades 9-12" data-ta="வகுப்புகள் 9-12">Grades 9-12</p>
-                    <p class="text-gray-600 mb-6" data-en="Preparing students for competitive exams and university admissions." data-ta="போட்டித் தேர்வுகள் மற்றும் பல்கலைக்கழக சேர்க்கைக்கு மாணவர்களைத் தயார்படுத்துதல்.">Preparing students for competitive exams and university admissions.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3 text-gray-700 text-sm">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span data-en="Board exam prep" data-ta="போர்டு தேர்வு தயாரிப்பு">Board exam prep</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-700 text-sm">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span data-en="JEE/NEET coaching" data-ta="JEE/NEET பயிற்சி">JEE/NEET coaching</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-700 text-sm">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span data-en="Career counseling" data-ta="தொழில் ஆலோசனை">Career counseling</span>
-                        </li>
-                    </ul>
+                    <h3 class="font-display text-2xl font-bold text-cream-300 mb-2" data-en="Cultural" data-ta="கலாச்சாரம்">Cultural</h3>
+                    <p class="text-cream-400 mb-4" data-en="Arts & Competitions" data-ta="கலை & போட்டிகள்">Arts & Competitions</p>
+                    <p class="text-cream-100 text-sm leading-relaxed" data-en="Active participation in cultural events, debates, and competitions at district and state levels." data-ta="மாவட்ட மற்றும் மாநில அளவிலான கலாச்சார நிகழ்வுகள், விவாதங்கள் மற்றும் போட்டிகளில் தீவிர பங்கேற்பு.">
+                        Active participation in cultural events, debates, and competitions at district and state levels.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Campus Section -->
-    <section id="campus" class="py-20 lg:py-28 bg-white">
+    <!-- Facilities Section -->
+    <section id="facilities" class="py-20 bg-cream-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <div class="gold-line mx-auto mb-6"></div>
-                <h2 class="font-display text-3xl lg:text-4xl font-bold text-navy-900 mb-4" data-en="World-Class Facilities" data-ta="உலகத்தரம் வாய்ந்த வசதிகள்">
-                    World-Class Facilities
+                <div class="inline-block bg-maroon-100 text-maroon-900 text-sm font-semibold px-4 py-1.5 rounded-full mb-4" data-en="Infrastructure" data-ta="உள்கட்டமைப்பு">Infrastructure</div>
+                <h2 class="font-display text-3xl lg:text-4xl font-bold text-maroon-900 mb-4" data-en="Campus Facilities" data-ta="வளாக வசதிகள்">
+                    Campus Facilities
                 </h2>
-                <p class="text-gray-600 text-lg" data-en="A modern 5-acre campus designed to inspire learning and growth." data-ta="கற்றல் மற்றும் வளர்ச்சியை ஊக்குவிக்க வடிவமைக்கப்பட்ட நவீன 5 ஏக்கர் வளாகம்.">A modern 5-acre campus designed to inspire learning and growth.</p>
+                <p class="text-gray-600 text-lg" data-en="Modern amenities to support comprehensive learning and development." data-ta="விரிவான கற்றல் மற்றும் வளர்ச்சியை ஆதரிக்கும் நவீன வசதிகள்.">Modern amenities to support comprehensive learning and development.</p>
             </div>
             
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="premium-card p-6 text-center">
-                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                    </div>
-                    <h3 class="font-semibold text-navy-900 mb-1" data-en="Science Labs" data-ta="அறிவியல் ஆய்வகங்கள்">Science Labs</h3>
-                    <p class="text-gray-500 text-sm" data-en="6 Advanced Labs" data-ta="6 மேம்பட்ட ஆய்வகங்கள்">6 Advanced Labs</p>
-                </div>
-                <div class="premium-card p-6 text-center">
+                <div class="heritage-card rounded-xl p-6 text-center">
                     <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     </div>
-                    <h3 class="font-semibold text-navy-900 mb-1" data-en="Computer Labs" data-ta="கணினி ஆய்வகங்கள்">Computer Labs</h3>
-                    <p class="text-gray-500 text-sm" data-en="200+ Workstations" data-ta="200+ கணினிகள்">200+ Workstations</p>
+                    <h3 class="font-semibold text-maroon-900 mb-1" data-en="Computer Lab" data-ta="கணினி ஆய்வகம்">Computer Lab</h3>
+                    <p class="text-gray-500 text-sm" data-en="Modern Systems" data-ta="நவீன அமைப்புகள்">Modern Systems</p>
                 </div>
-                <div class="premium-card p-6 text-center">
+                
+                <div class="heritage-card rounded-xl p-6 text-center">
                     <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
                     </div>
-                    <h3 class="font-semibold text-navy-900 mb-1" data-en="Library" data-ta="நூலகம்">Library</h3>
-                    <p class="text-gray-500 text-sm" data-en="20,000+ Books" data-ta="20,000+ புத்தகங்கள்">20,000+ Books</p>
+                    <h3 class="font-semibold text-maroon-900 mb-1" data-en="Library" data-ta="நூலகம்">Library</h3>
+                    <p class="text-gray-500 text-sm" data-en="Extensive Collection" data-ta="விரிவான தொகுப்பு">Extensive Collection</p>
                 </div>
-                <div class="premium-card p-6 text-center">
+                
+                <div class="heritage-card rounded-xl p-6 text-center">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-maroon-900 mb-1" data-en="Science Labs" data-ta="அறிவியல் ஆய்வகங்கள்">Science Labs</h3>
+                    <p class="text-gray-500 text-sm" data-en="Physics, Chemistry" data-ta="இயற்பியல், வேதியியல்">Physics, Chemistry</p>
+                </div>
+                
+                <div class="heritage-card rounded-xl p-6 text-center">
                     <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+                        <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/></svg>
                     </div>
-                    <h3 class="font-semibold text-navy-900 mb-1" data-en="Sports Complex" data-ta="விளையாட்டு வளாகம்">Sports Complex</h3>
-                    <p class="text-gray-500 text-sm" data-en="Multi-sport Facility" data-ta="பல விளையாட்டு வசதி">Multi-sport Facility</p>
+                    <h3 class="font-semibold text-maroon-900 mb-1" data-en="Basketball Court" data-ta="கூடைப்பந்து மைதானம்">Basketball Court</h3>
+                    <p class="text-gray-500 text-sm" data-en="National Training" data-ta="தேசிய பயிற்சி">National Training</p>
                 </div>
-                <div class="premium-card p-6 text-center">
-                    <div class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
-                    </div>
-                    <h3 class="font-semibold text-navy-900 mb-1" data-en="Music Room" data-ta="இசை அறை">Music Room</h3>
-                    <p class="text-gray-500 text-sm" data-en="Performing Arts" data-ta="நிகழ்த்து கலைகள்">Performing Arts</p>
-                </div>
-                <div class="premium-card p-6 text-center">
+                
+                <div class="heritage-card rounded-xl p-6 text-center">
                     <div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <svg class="w-7 h-7 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
                     </div>
-                    <h3 class="font-semibold text-navy-900 mb-1" data-en="Auditorium" data-ta="அரங்கம்">Auditorium</h3>
-                    <p class="text-gray-500 text-sm" data-en="500+ Capacity" data-ta="500+ இருக்கைகள்">500+ Capacity</p>
+                    <h3 class="font-semibold text-maroon-900 mb-1" data-en="Auditorium" data-ta="அரங்கம்">Auditorium</h3>
+                    <p class="text-gray-500 text-sm" data-en="Events & Functions" data-ta="நிகழ்வுகள் & விழாக்கள்">Events & Functions</p>
                 </div>
-                <div class="premium-card p-6 text-center">
+                
+                <div class="heritage-card rounded-xl p-6 text-center">
                     <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                        <svg class="w-7 h-7 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
                     </div>
-                    <h3 class="font-semibold text-navy-900 mb-1" data-en="Health Center" data-ta="சுகாதார மையம்">Health Center</h3>
-                    <p class="text-gray-500 text-sm" data-en="24/7 Medical Care" data-ta="24/7 மருத்துவ பராமரிப்பு">24/7 Medical Care</p>
+                    <h3 class="font-semibold text-maroon-900 mb-1" data-en="Playground" data-ta="விளையாட்டு மைதானம்">Playground</h3>
+                    <p class="text-gray-500 text-sm" data-en="Multiple Sports" data-ta="பல விளையாட்டுகள்">Multiple Sports</p>
                 </div>
-                <div class="premium-card p-6 text-center">
+                
+                <div class="heritage-card rounded-xl p-6 text-center">
                     <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        <svg class="w-7 h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
                     </div>
-                    <h3 class="font-semibold text-navy-900 mb-1" data-en="Smart Classes" data-ta="ஸ்மார்ட் வகுப்புகள்">Smart Classes</h3>
-                    <p class="text-gray-500 text-sm" data-en="Digital Learning" data-ta="டிஜிட்டல் கற்றல்">Digital Learning</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-20 lg:py-28 bg-navy-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <div class="gold-line mx-auto mb-6"></div>
-                <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-4" data-en="What Parents Say" data-ta="பெற்றோர் என்ன சொல்கிறார்கள்">
-                    What Parents Say
-                </h2>
-                <p class="text-blue-200 text-lg" data-en="Trusted by families across Bangalore for quality education." data-ta="தரமான கல்விக்காக பெங்களூர் முழுவதும் உள்ள குடும்பங்களால் நம்பப்படுகிறது.">Trusted by families across Bangalore for quality education.</p>
-            </div>
-            
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-                    <div class="flex gap-1 mb-4">
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                    </div>
-                    <p class="text-white/90 leading-relaxed mb-6" data-en="SKV School has been instrumental in shaping my daughter's academic journey. The teachers are dedicated and the environment is nurturing!" data-ta="என் மகளின் கல்வி பயணத்தை வடிவமைப்பதில் SKV பள்ளி முக்கிய பங்கு வகித்துள்ளது!">SKV School has been instrumental in shaping my daughter's academic journey. The teachers are dedicated and the environment is nurturing!</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 bg-gold-500 rounded-full flex items-center justify-center text-navy-900 font-bold">PS</div>
-                        <div>
-                            <div class="text-white font-semibold">Priya Sharma</div>
-                            <div class="text-blue-300 text-sm" data-en="Parent of Class 10 Student" data-ta="வகுப்பு 10 மாணவரின் பெற்றோர்">Parent of Class 10 Student</div>
-                        </div>
-                    </div>
+                    <h3 class="font-semibold text-maroon-900 mb-1" data-en="Spacious Classrooms" data-ta="பரந்த வகுப்பறைகள்">Spacious Classrooms</h3>
+                    <p class="text-gray-500 text-sm" data-en="Well Ventilated" data-ta="நல்ல காற்றோட்டம்">Well Ventilated</p>
                 </div>
                 
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-                    <div class="flex gap-1 mb-4">
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <div class="heritage-card rounded-xl p-6 text-center">
+                    <div class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                     </div>
-                    <p class="text-white/90 leading-relaxed mb-6" data-en="The holistic approach to education here is commendable. My son has developed not just academically but also as a confident individual!" data-ta="இங்குள்ள முழுமையான கல்வி அணுகுமுறை பாராட்டத்தக்கது!">The holistic approach to education here is commendable. My son has developed not just academically but also as a confident individual!</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 bg-gold-500 rounded-full flex items-center justify-center text-navy-900 font-bold">RK</div>
-                        <div>
-                            <div class="text-white font-semibold">Rajesh Kumar</div>
-                            <div class="text-blue-300 text-sm" data-en="Parent of Class 8 Student" data-ta="வகுப்பு 8 மாணவரின் பெற்றோர்">Parent of Class 8 Student</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-                    <div class="flex gap-1 mb-4">
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                    </div>
-                    <p class="text-white/90 leading-relaxed mb-6" data-en="The JEE coaching integrated with regular classes helped my son secure admission to IIT Bombay. Forever grateful!" data-ta="வழக்கமான வகுப்புகளுடன் ஒருங்கிணைக்கப்பட்ட JEE பயிற்சி என் மகனுக்கு IIT பம்பாயில் சேர்க்கை பெற உதவியது!">The JEE coaching integrated with regular classes helped my son secure admission to IIT Bombay. Forever grateful!</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 bg-gold-500 rounded-full flex items-center justify-center text-navy-900 font-bold">AR</div>
-                        <div>
-                            <div class="text-white font-semibold">Anita Reddy</div>
-                            <div class="text-blue-300 text-sm" data-en="Parent of 2024 Alumnus" data-ta="2024 முன்னாள் மாணவரின் பெற்றோர்">Parent of 2024 Alumnus</div>
-                        </div>
-                    </div>
+                    <h3 class="font-semibold text-maroon-900 mb-1" data-en="Safe Environment" data-ta="பாதுகாப்பான சூழல்">Safe Environment</h3>
+                    <p class="text-gray-500 text-sm" data-en="Secure Campus" data-ta="பாதுகாப்பான வளாகம்">Secure Campus</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Admissions Section -->
-    <section id="admissions" class="py-20 lg:py-28 bg-white">
+    <section id="admissions" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16">
                 <div>
-                    <div class="gold-line mb-6"></div>
-                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-navy-900 mb-6" data-en="Begin Your Child's Journey" data-ta="உங்கள் குழந்தையின் பயணத்தைத் தொடங்குங்கள்">
-                        Begin Your Child's Journey
+                    <div class="inline-block bg-maroon-100 text-maroon-900 text-sm font-semibold px-4 py-1.5 rounded-full mb-4" data-en="Join Us" data-ta="எங்களுடன் சேருங்கள்">Join Us</div>
+                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-maroon-900 mb-6" data-en="Admissions 2026-27" data-ta="சேர்க்கை 2026-27">
+                        Admissions 2026-27
                     </h2>
-                    <p class="text-gray-600 text-lg mb-8" data-en="Join our community of learners. Limited seats available for the 2026-27 academic session." data-ta="எங்கள் கற்றோர் சமூகத்தில் சேரவும். 2026-27 கல்வி அமர்வுக்கு குறைந்த இடங்கள் உள்ளன.">
-                        Join our community of learners. Limited seats available for the 2026-27 academic session.
+                    <p class="text-gray-600 text-lg mb-8" data-en="Begin your child's educational journey at S.K.Velayutham Higher Secondary School. Limited seats available." data-ta="ச.க.வேலாயுதம் மேனிலைப்பள்ளியில் உங்கள் குழந்தையின் கல்விப் பயணத்தைத் தொடங்குங்கள். குறைந்த இடங்கள் உள்ளன.">
+                        Begin your child's educational journey at S.K.Velayutham Higher Secondary School. Limited seats available.
                     </p>
                     
                     <div class="space-y-6 mb-10">
                         <div class="flex gap-4">
-                            <div class="w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+                            <div class="w-10 h-10 bg-maroon-900 text-cream-300 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
                             <div>
-                                <h4 class="font-semibold text-navy-900" data-en="Submit Inquiry" data-ta="விசாரணை சமர்ப்பிக்கவும்">Submit Inquiry</h4>
-                                <p class="text-gray-500 text-sm" data-en="Fill out the form or schedule a campus visit." data-ta="படிவத்தை நிரப்பவும் அல்லது வளாக வருகையை திட்டமிடவும்.">Fill out the form or schedule a campus visit.</p>
+                                <h4 class="font-semibold text-maroon-900" data-en="Get Application Form" data-ta="விண்ணப்பப் படிவம் பெறுங்கள்">Get Application Form</h4>
+                                <p class="text-gray-500 text-sm" data-en="Available at school office or download online." data-ta="பள்ளி அலுவலகத்தில் கிடைக்கும் அல்லது ஆன்லைனில் பதிவிறக்கம் செய்யவும்.">Available at school office or download online.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+                            <div class="w-10 h-10 bg-maroon-900 text-cream-300 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
                             <div>
-                                <h4 class="font-semibold text-navy-900" data-en="Campus Tour" data-ta="வளாக சுற்றுலா">Campus Tour</h4>
-                                <p class="text-gray-500 text-sm" data-en="Meet our faculty and explore facilities." data-ta="எங்கள் ஆசிரியர்களை சந்தித்து வசதிகளை ஆராயுங்கள்.">Meet our faculty and explore facilities.</p>
+                                <h4 class="font-semibold text-maroon-900" data-en="Submit Documents" data-ta="ஆவணங்களை சமர்ப்பிக்கவும்">Submit Documents</h4>
+                                <p class="text-gray-500 text-sm" data-en="Birth certificate, previous school TC, photos." data-ta="பிறப்புச் சான்றிதழ், முந்தைய பள்ளி TC, புகைப்படங்கள்.">Birth certificate, previous school TC, photos.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+                            <div class="w-10 h-10 bg-maroon-900 text-cream-300 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
                             <div>
-                                <h4 class="font-semibold text-navy-900" data-en="Enrollment" data-ta="பதிவு">Enrollment</h4>
-                                <p class="text-gray-500 text-sm" data-en="Complete admission and join our family." data-ta="சேர்க்கையை முடித்து எங்கள் குடும்பத்தில் சேரவும்.">Complete admission and join our family.</p>
+                                <h4 class="font-semibold text-maroon-900" data-en="Admission Confirmation" data-ta="சேர்க்கை உறுதிப்படுத்தல்">Admission Confirmation</h4>
+                                <p class="text-gray-500 text-sm" data-en="Pay fees and complete enrollment." data-ta="கட்டணம் செலுத்தி பதிவை முடிக்கவும்.">Pay fees and complete enrollment.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="bg-gray-50 rounded-xl p-6 border-l-4 border-gold-500">
-                        <h4 class="font-semibold text-navy-900 mb-3" data-en="Important Dates" data-ta="முக்கிய தேதிகள்">Important Dates</h4>
+                    <div class="heritage-card rounded-xl p-6 border-l-4 border-maroon-600">
+                        <h4 class="font-semibold text-maroon-900 mb-3" data-en="Admission Enquiry" data-ta="சேர்க்கை விசாரணை">Admission Enquiry</h4>
                         <div class="space-y-2 text-sm text-gray-600">
-                            <p><span class="text-gray-500" data-en="Applications Open:" data-ta="விண்ணப்பங்கள் திறப்பு:">Applications Open:</span> March 1, 2026</p>
-                            <p><span class="text-gray-500" data-en="Last Date:" data-ta="கடைசி தேதி:">Last Date:</span> May 31, 2026</p>
-                            <p><span class="text-gray-500" data-en="Session Begins:" data-ta="அமர்வு தொடக்கம்:">Session Begins:</span> June 2026</p>
+                            <p class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-maroon-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                04142-XXXXXX
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-maroon-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <span data-en="Mon-Sat: 9:00 AM - 4:00 PM" data-ta="திங்கள்-சனி: 9:00 AM - 4:00 PM">Mon-Sat: 9:00 AM - 4:00 PM</span>
+                            </p>
                         </div>
                     </div>
                 </div>
                 
                 <div>
-                    <div class="bg-gray-50 rounded-2xl p-6 lg:p-8">
-                        <h3 class="font-display text-2xl font-bold text-navy-900 mb-6" data-en="Admission Inquiry" data-ta="சேர்க்கை விசாரணை">Admission Inquiry</h3>
+                    <div class="heritage-card rounded-2xl p-6 lg:p-8">
+                        <h3 class="font-display text-2xl font-bold text-maroon-900 mb-6" data-en="Enquiry Form" data-ta="விசாரணைப் படிவம்">Enquiry Form</h3>
                         <form id="admissionForm" class="space-y-4">
                             <div class="grid sm:grid-cols-2 gap-4">
-                                <input type="text" data-placeholder-en="Parent Name *" data-placeholder-ta="பெற்றோர் பெயர் *" placeholder="Parent Name *" required class="form-input w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white transition-all">
-                                <input type="tel" data-placeholder-en="Phone *" data-placeholder-ta="தொலைபேசி *" placeholder="Phone *" required class="form-input w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white transition-all">
+                                <input type="text" data-placeholder-en="Parent Name *" data-placeholder-ta="பெற்றோர் பெயர் *" placeholder="Parent Name *" required class="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white focus:border-maroon-500 focus:ring-2 focus:ring-maroon-200 outline-none transition-all">
+                                <input type="tel" data-placeholder-en="Phone *" data-placeholder-ta="தொலைபேசி *" placeholder="Phone *" required class="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white focus:border-maroon-500 focus:ring-2 focus:ring-maroon-200 outline-none transition-all">
                             </div>
-                            <input type="email" data-placeholder-en="Email Address *" data-placeholder-ta="மின்னஞ்சல் *" placeholder="Email Address *" required class="form-input w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white transition-all">
-                            <input type="text" data-placeholder-en="Student Name *" data-placeholder-ta="மாணவர் பெயர் *" placeholder="Student Name *" required class="form-input w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white transition-all">
-                            <select required class="form-input w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white text-gray-600 transition-all">
-                                <option value="" data-en="Select Grade *" data-ta="வகுப்பைத் தேர்ந்தெடுக்கவும் *">Select Grade *</option>
-                                <option>Pre-KG / Nursery</option>
+                            <input type="text" data-placeholder-en="Student Name *" data-placeholder-ta="மாணவர் பெயர் *" placeholder="Student Name *" required class="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white focus:border-maroon-500 focus:ring-2 focus:ring-maroon-200 outline-none transition-all">
+                            <select required class="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white text-gray-600 focus:border-maroon-500 focus:ring-2 focus:ring-maroon-200 outline-none transition-all">
+                                <option value="" data-en="Select Class *" data-ta="வகுப்பைத் தேர்ந்தெடுக்கவும் *">Select Class *</option>
                                 <option>LKG / UKG</option>
-                                <option>Grade 1 - 5</option>
-                                <option>Grade 6 - 8</option>
-                                <option>Grade 9 - 10</option>
-                                <option>Grade 11 - 12</option>
+                                <option>Class I - V</option>
+                                <option>Class VI - VIII</option>
+                                <option>Class IX - X</option>
+                                <option>Class XI - XII (Science)</option>
+                                <option>Class XI - XII (Commerce)</option>
                             </select>
-                            <textarea rows="3" data-placeholder-en="Any questions? (Optional)" data-placeholder-ta="ஏதேனும் கேள்விகள்? (விருப்பம்)" placeholder="Any questions? (Optional)" class="form-input w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-white resize-none transition-all"></textarea>
-                            <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-white py-4 rounded-xl font-semibold transition-all">
-                                <span data-en="Submit Inquiry" data-ta="விசாரணை சமர்ப்பிக்கவும்">Submit Inquiry</span>
+                            <input type="text" data-placeholder-en="Village / Town *" data-placeholder-ta="கிராமம் / நகரம் *" placeholder="Village / Town *" required class="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white focus:border-maroon-500 focus:ring-2 focus:ring-maroon-200 outline-none transition-all">
+                            <textarea rows="3" data-placeholder-en="Any message (Optional)" data-placeholder-ta="ஏதேனும் செய்தி (விருப்பம்)" placeholder="Any message (Optional)" class="w-full px-4 py-3 rounded-xl border border-cream-300 bg-white resize-none focus:border-maroon-500 focus:ring-2 focus:ring-maroon-200 outline-none transition-all"></textarea>
+                            <button type="submit" class="w-full bg-maroon-900 hover:bg-maroon-800 text-white py-4 rounded-xl font-semibold transition-all">
+                                <span data-en="Submit Enquiry" data-ta="விசாரணையை சமர்ப்பிக்கவும்">Submit Enquiry</span>
                             </button>
-                            <p class="text-gray-500 text-xs text-center" data-en="We'll respond within 24 hours." data-ta="24 மணி நேரத்திற்குள் பதிலளிப்போம்.">We'll respond within 24 hours.</p>
+                            <p class="text-gray-500 text-xs text-center" data-en="We will contact you within 2 working days." data-ta="2 வேலை நாட்களுக்குள் தொடர்பு கொள்வோம்.">We will contact you within 2 working days.</p>
                         </form>
                     </div>
                 </div>
@@ -618,87 +636,116 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 lg:py-28 bg-gray-50">
+    <section id="contact" class="py-20 bg-cream-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <div class="gold-line mx-auto mb-6"></div>
-                <h2 class="font-display text-3xl lg:text-4xl font-bold text-navy-900 mb-4" data-en="Get in Touch" data-ta="தொடர்பில் இருங்கள்">Get in Touch</h2>
-                <p class="text-gray-600 text-lg" data-en="Visit our campus or reach out to learn more." data-ta="எங்கள் வளாகத்தை பார்வையிடவும் அல்லது மேலும் அறிய தொடர்பு கொள்ளவும்.">Visit our campus or reach out to learn more.</p>
+                <div class="inline-block bg-maroon-100 text-maroon-900 text-sm font-semibold px-4 py-1.5 rounded-full mb-4" data-en="Visit Us" data-ta="எங்களை சந்தியுங்கள்">Visit Us</div>
+                <h2 class="font-display text-3xl lg:text-4xl font-bold text-maroon-900 mb-4" data-en="Contact Information" data-ta="தொடர்பு தகவல்">Contact Information</h2>
             </div>
             
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="premium-card p-8 text-center">
-                    <div class="w-14 h-14 bg-navy-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <div class="heritage-card rounded-xl p-8 text-center">
+                    <div class="w-14 h-14 bg-maroon-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-maroon-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
-                    <h3 class="font-semibold text-navy-900 mb-2" data-en="Campus Address" data-ta="வளாக முகவரி">Campus Address</h3>
-                    <p class="text-gray-500 text-sm">SKV School Campus<br>Bangalore, Karnataka 560001</p>
+                    <h3 class="font-semibold text-maroon-900 mb-2" data-en="Address" data-ta="முகவரி">Address</h3>
+                    <p class="text-gray-600 text-sm">
+                        <span class="tamil-text">ச.க.வேலாயுதம் மேனிலைப்பள்ளி</span><br>
+                        Kurinjipadi - 607302<br>
+                        Cuddalore District<br>
+                        Tamil Nadu, India
+                    </p>
                 </div>
                 
-                <div class="premium-card p-8 text-center">
-                    <div class="w-14 h-14 bg-gold-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <div class="heritage-card rounded-xl p-8 text-center">
+                    <div class="w-14 h-14 bg-maroon-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-maroon-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                     </div>
-                    <h3 class="font-semibold text-navy-900 mb-2" data-en="Phone" data-ta="தொலைபேசி">Phone</h3>
-                    <p class="text-gray-500 text-sm">+91 80 2345 6789<br>+91 80 9876 5432</p>
+                    <h3 class="font-semibold text-maroon-900 mb-2" data-en="Phone" data-ta="தொலைபேசி">Phone</h3>
+                    <p class="text-gray-600 text-sm">
+                        04142-XXXXXX<br>
+                        +91 XXXXX XXXXX
+                    </p>
                 </div>
                 
-                <div class="premium-card p-8 text-center">
-                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <div class="heritage-card rounded-xl p-8 text-center">
+                    <div class="w-14 h-14 bg-maroon-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-maroon-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
-                    <h3 class="font-semibold text-navy-900 mb-2" data-en="Email" data-ta="மின்னஞ்சல்">Email</h3>
-                    <p class="text-gray-500 text-sm">admissions@skvschool.edu.in<br>info@skvschool.edu.in</p>
+                    <h3 class="font-semibold text-maroon-900 mb-2" data-en="School Hours" data-ta="பள்ளி நேரம்">School Hours</h3>
+                    <p class="text-gray-600 text-sm" data-en="Monday - Saturday<br>9:00 AM - 4:00 PM<br>Sunday: Closed" data-ta="திங்கள் - சனி<br>9:00 AM - 4:00 PM<br>ஞாயிறு: விடுமுறை">
+                        Monday - Saturday<br>
+                        9:00 AM - 4:00 PM<br>
+                        Sunday: Closed
+                    </p>
                 </div>
+            </div>
+            
+            <!-- Map placeholder -->
+            <div class="mt-12 heritage-card rounded-2xl overflow-hidden">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31159.04234567890!2d79.58!3d11.57!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKurinjipadi!5e0!3m2!1sen!2sin!4v1234567890"
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    class="grayscale hover:grayscale-0 transition-all duration-500">
+                </iframe>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-navy-950 text-white py-16">
+    <footer class="bg-maroon-950 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-gold-500 rounded-xl flex items-center justify-center">
-                            <span class="text-navy-900 font-display font-bold text-lg">S</span>
+                        <div class="w-12 h-12 bg-cream-300 rounded-full flex items-center justify-center">
+                            <span class="text-maroon-900 font-display font-bold text-lg">SKV</span>
                         </div>
-                        <span class="font-display font-bold text-xl">SKV School</span>
+                        <div>
+                            <span class="font-display font-bold text-lg block">SKV HSS</span>
+                            <span class="tamil-text text-cream-400 text-xs">குறிஞ்சிப்பாடி</span>
+                        </div>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6" data-en="Shaping future leaders through academic excellence since 1998." data-ta="1998 முதல் கல்வி சிறப்பின் மூலம் எதிர்கால தலைவர்களை உருவாக்குகிறோம்.">Shaping future leaders through academic excellence since 1998.</p>
+                    <p class="text-cream-400 text-sm leading-relaxed" data-en="Nurturing young minds since 1960. Government-aided school providing quality education from LKG to Class XII." data-ta="1960 முதல் இளம் மனங்களை வளர்த்து வருகிறோம். LKG முதல் வகுப்பு XII வரை தரமான கல்வி வழங்கும் அரசு உதவி பெறும் பள்ளி.">Nurturing young minds since 1960. Government-aided school providing quality education from LKG to Class XII.</p>
                 </div>
                 
                 <div>
                     <h4 class="font-semibold mb-4" data-en="Quick Links" data-ta="விரைவு இணைப்புகள்">Quick Links</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
+                    <ul class="space-y-2 text-sm text-cream-400">
                         <li><a href="#about" class="hover:text-white transition-colors" data-en="About Us" data-ta="எங்களை பற்றி">About Us</a></li>
-                        <li><a href="#programs" class="hover:text-white transition-colors" data-en="Programs" data-ta="திட்டங்கள்">Programs</a></li>
+                        <li><a href="#academics" class="hover:text-white transition-colors" data-en="Academics" data-ta="கல்வி">Academics</a></li>
+                        <li><a href="#achievements" class="hover:text-white transition-colors" data-en="Achievements" data-ta="சாதனைகள்">Achievements</a></li>
                         <li><a href="#admissions" class="hover:text-white transition-colors" data-en="Admissions" data-ta="சேர்க்கை">Admissions</a></li>
-                        <li><a href="#contact" class="hover:text-white transition-colors" data-en="Contact" data-ta="தொடர்பு">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="font-semibold mb-4" data-en="Resources" data-ta="வளங்கள்">Resources</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors" data-en="Parent Portal" data-ta="பெற்றோர் போர்டல்">Parent Portal</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors" data-en="Student Portal" data-ta="மாணவர் போர்டல்">Student Portal</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors" data-en="Academic Calendar" data-ta="கல்வி நாள்காட்டி">Academic Calendar</a></li>
+                    <h4 class="font-semibold mb-4" data-en="Academics" data-ta="கல்வி">Academics</h4>
+                    <ul class="space-y-2 text-sm text-cream-400">
+                        <li><span data-en="Primary School (LKG-V)" data-ta="தொடக்கப் பள்ளி (LKG-V)">Primary School (LKG-V)</span></li>
+                        <li><span data-en="Middle School (VI-VIII)" data-ta="நடுநிலைப் பள்ளி (VI-VIII)">Middle School (VI-VIII)</span></li>
+                        <li><span data-en="High School (IX-X)" data-ta="உயர்நிலைப் பள்ளி (IX-X)">High School (IX-X)</span></li>
+                        <li><span data-en="Higher Secondary (XI-XII)" data-ta="மேல்நிலைப் பள்ளி (XI-XII)">Higher Secondary (XI-XII)</span></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="font-semibold mb-4" data-en="Contact" data-ta="தொடர்பு">Contact</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li>+91 80 2345 6789</li>
-                        <li>info@skvschool.edu.in</li>
-                        <li>Bangalore, Karnataka</li>
+                    <ul class="space-y-2 text-sm text-cream-400">
+                        <li>Kurinjipadi - 607302</li>
+                        <li>Cuddalore District, TN</li>
+                        <li>04142-XXXXXX</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
-                <p data-en="© 2026 SKV School. All rights reserved." data-ta="© 2026 SKV பள்ளி. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.">© 2026 SKV School. All rights reserved.</p>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-cream-500 text-sm" data-en="© 2026 S.K.Velayutham Higher Secondary School. All rights reserved." data-ta="© 2026 ச.க.வேலாயுதம் மேனிலைப்பள்ளி. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.">© 2026 S.K.Velayutham Higher Secondary School. All rights reserved.</p>
+                <p class="text-cream-500 text-sm">Tamil Nadu State Board • Est. 1960</p>
             </div>
         </div>
     </footer>
@@ -714,7 +761,13 @@
             
             document.querySelectorAll('[data-en]').forEach(el => {
                 const text = el.getAttribute(`data-${lang}`);
-                if (text) el.textContent = text;
+                if (text) {
+                    if (el.innerHTML.includes('<br>')) {
+                        el.innerHTML = text;
+                    } else {
+                        el.textContent = text;
+                    }
+                }
             });
             
             document.querySelectorAll('[data-placeholder-en]').forEach(el => {
@@ -724,7 +777,11 @@
             
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);
-                btn.classList.toggle('text-gray-500', btn.dataset.lang !== lang);
+                if (btn.dataset.lang !== lang) {
+                    btn.classList.add('text-maroon-700');
+                } else {
+                    btn.classList.remove('text-maroon-700');
+                }
             });
         }
         
@@ -749,14 +806,14 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                if (target) window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
             });
         });
 
         // Form
         document.getElementById('admissionForm')?.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert(currentLang === 'ta' ? 'உங்கள் விசாரணைக்கு நன்றி! 24 மணி நேரத்திற்குள் தொடர்பு கொள்வோம்.' : 'Thank you! We will contact you within 24 hours.');
+            alert(currentLang === 'ta' ? 'உங்கள் விசாரணைக்கு நன்றி! 2 வேலை நாட்களுக்குள் தொடர்பு கொள்வோம்.' : 'Thank you for your enquiry! We will contact you within 2 working days.');
             this.reset();
         });
     </script>
