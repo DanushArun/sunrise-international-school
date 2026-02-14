@@ -2,10 +2,10 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="SKV School - Excellence in Education since 1998. Premier K-12 education in Bangalore, India.">
-    <meta name="theme-color" content="#1e3a5f">
-    <title>SKV School | Excellence in Education | Bangalore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SKV School - A premier CBSE school in Bangalore providing world-class education since 1998. Admissions open for 2026-27.">
+    <meta name="theme-color" content="#0f172a">
+    <title>SKV School | Premier Education in Bangalore</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,415 +14,454 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            200: '#bae0fd',
-                            300: '#7cc8fb',
-                            400: '#36aaf5',
-                            500: '#0c8ee6',
-                            600: '#0070c4',
-                            700: '#01599f',
-                            800: '#064b83',
-                            900: '#1e3a5f',
-                            950: '#0a1e33',
+                        navy: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
                         },
-                        accent: {
-                            50: '#fff7ed',
-                            100: '#ffedd5',
-                            200: '#fed7aa',
-                            300: '#fdba74',
-                            400: '#fb923c',
-                            500: '#f97316',
-                            600: '#ea580c',
-                            700: '#c2410c',
-                            800: '#9a3412',
-                            900: '#7c2d12',
+                        gold: {
+                            400: '#c9a227',
+                            500: '#b8860b',
+                            600: '#9a7209',
                         }
                     },
                     fontFamily: {
-                        'heading': ['Poppins', 'sans-serif'],
-                        'body': ['Inter', 'sans-serif'],
+                        'display': ['Playfair Display', 'serif'],
+                        'sans': ['DM Sans', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        body { font-family: 'DM Sans', sans-serif; }
+        .font-display { font-family: 'Playfair Display', serif; }
         
+        /* Smooth animations */
+        .fade-up { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Premium card effect */
+        .premium-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .premium-card:hover {
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+        }
+        
+        /* Image placeholder with gradient */
+        .img-placeholder {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .img-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        /* Gold accent line */
+        .gold-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a227, #b8860b);
+        }
+        
+        /* Mobile menu */
+        .mobile-nav {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-nav.active {
+            transform: translateX(0);
+        }
+        
+        /* Hero gradient overlay */
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(15,23,42,0.7) 0%, rgba(15,23,42,0.85) 100%);
+        }
+        
+        /* Stat counter gradient */
+        .stat-gradient {
+            background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 4px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #0f172a; border-radius: 4px; }
         
-        /* Mobile menu animation */
-        .mobile-menu { transform: translateX(-100%); }
-        .mobile-menu.active { transform: translateX(0); }
-        
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #0c8ee6 0%, #f97316 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Hero gradient */
-        .hero-gradient {
-            background: linear-gradient(135deg, #1e3a5f 0%, #064b83 50%, #01599f 100%);
-        }
-        
-        /* Card hover effect */
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        /* Button hover */
-        .btn-hover {
-            transition: all 0.3s ease;
-        }
-        .btn-hover:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
-        }
-        
-        /* Disable animations on mobile */
-        @media (max-width: 768px) {
-            [data-aos] {
-                opacity: 1 !important;
-                transform: none !important;
+        /* Disable hover effects on mobile */
+        @media (hover: none) {
+            .premium-card:hover {
+                transform: none;
+                box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
             }
-        }
-        
-        /* Stats counter */
-        .stat-number {
-            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
     </style>
 </head>
-<body class="antialiased text-gray-800 overflow-x-hidden">
+<body class="antialiased text-navy-800 bg-white">
 
-    <!-- Top Bar -->
-    <div class="bg-primary-950 text-white text-sm py-2">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col sm:flex-row justify-between items-center gap-2">
-                <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
-                    <span class="flex items-center gap-2">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        +91 80 2345 6789
-                    </span>
-                    <span class="flex items-center gap-2">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                        info@skvschool.edu.in
-                    </span>
-                </div>
-                <div class="flex gap-4">
-                    <a href="#admissions" class="hover:text-accent-400 transition-colors font-medium">Apply Now</a>
-                    <a href="#" class="hover:text-accent-400 transition-colors">Parent Portal</a>
-                </div>
-            </div>
+    <!-- Announcement Bar -->
+    <div class="bg-navy-900 text-white text-sm py-2.5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-gold-400 font-semibold">Admissions Open 2026-27</span>
+            <span class="mx-2 text-navy-400">|</span>
+            <span class="text-navy-200">Limited seats available. <a href="#admissions" class="underline hover:text-white transition-colors">Apply now →</a></span>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50" id="navbar">
+    <header class="bg-white sticky top-0 z-50 border-b border-navy-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="#" class="flex flex-col">
-                        <span class="text-2xl sm:text-3xl font-extrabold text-primary-900 tracking-tight">SKV SCHOOL</span>
-                        <span class="text-xs text-gray-500 tracking-wide">Excellence in Education Since 1998</span>
-                    </a>
-                </div>
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-navy-900 rounded-lg flex items-center justify-center">
+                        <span class="text-gold-400 font-display font-bold text-xl">S</span>
+                    </div>
+                    <div>
+                        <div class="text-xl font-bold text-navy-900 tracking-tight">SKV School</div>
+                        <div class="text-xs text-navy-500 tracking-wide">CBSE Affiliated • Est. 1998</div>
+                    </div>
+                </a>
                 
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">About</a>
-                    <a href="#academics" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Academics</a>
-                    <a href="#campus" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Campus Life</a>
-                    <a href="#admissions" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Admissions</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Contact</a>
-                    <a href="#admissions" class="bg-accent-500 hover:bg-accent-600 text-white px-6 py-2.5 rounded-full font-semibold transition-all btn-hover">
-                        Enroll Now
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#about" class="text-navy-600 hover:text-navy-900 font-medium transition-colors">About</a>
+                    <a href="#academics" class="text-navy-600 hover:text-navy-900 font-medium transition-colors">Academics</a>
+                    <a href="#campus" class="text-navy-600 hover:text-navy-900 font-medium transition-colors">Campus</a>
+                    <a href="#admissions" class="text-navy-600 hover:text-navy-900 font-medium transition-colors">Admissions</a>
+                    <a href="#contact" class="text-navy-600 hover:text-navy-900 font-medium transition-colors">Contact</a>
+                </nav>
+                
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:+918023456789" class="text-navy-600 hover:text-navy-900 font-medium transition-colors">
+                        +91 80 2345 6789
+                    </a>
+                    <a href="#admissions" class="bg-navy-900 hover:bg-navy-800 text-white px-6 py-2.5 rounded-lg font-semibold transition-all">
+                        Apply Now
                     </a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" id="menuBtn">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button class="lg:hidden p-2 -mr-2" id="menuBtn" aria-label="Open menu">
+                    <svg class="w-6 h-6 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
             </div>
         </div>
         
-        <!-- Mobile Menu -->
-        <div class="mobile-menu fixed inset-0 bg-white z-50 lg:hidden transition-transform duration-300" id="mobileMenu">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-8">
-                    <span class="text-2xl font-bold text-primary-900">SKV SCHOOL</span>
-                    <button class="p-2 rounded-lg hover:bg-gray-100" id="closeMenu">
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav fixed inset-0 bg-white z-50 lg:hidden" id="mobileNav">
+            <div class="flex flex-col h-full">
+                <div class="flex justify-between items-center h-20 px-4 border-b border-navy-100">
+                    <div class="text-xl font-bold text-navy-900">SKV School</div>
+                    <button class="p-2 -mr-2" id="closeMenu" aria-label="Close menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                         </svg>
                     </button>
                 </div>
-                <div class="flex flex-col space-y-4">
-                    <a href="#home" class="mobile-link text-lg font-medium text-gray-700 hover:text-primary-600 py-3 border-b border-gray-100">Home</a>
-                    <a href="#about" class="mobile-link text-lg font-medium text-gray-700 hover:text-primary-600 py-3 border-b border-gray-100">About Us</a>
-                    <a href="#academics" class="mobile-link text-lg font-medium text-gray-700 hover:text-primary-600 py-3 border-b border-gray-100">Academics</a>
-                    <a href="#campus" class="mobile-link text-lg font-medium text-gray-700 hover:text-primary-600 py-3 border-b border-gray-100">Campus Life</a>
-                    <a href="#admissions" class="mobile-link text-lg font-medium text-gray-700 hover:text-primary-600 py-3 border-b border-gray-100">Admissions</a>
-                    <a href="#contact" class="mobile-link text-lg font-medium text-gray-700 hover:text-primary-600 py-3 border-b border-gray-100">Contact</a>
-                    <a href="#admissions" class="mobile-link bg-accent-500 text-white text-center py-4 rounded-xl font-semibold mt-4">
+                <nav class="flex-1 px-4 py-6 overflow-y-auto">
+                    <div class="space-y-1">
+                        <a href="#about" class="mobile-link block py-3 px-4 text-lg font-medium text-navy-900 hover:bg-navy-50 rounded-lg transition-colors">About Us</a>
+                        <a href="#academics" class="mobile-link block py-3 px-4 text-lg font-medium text-navy-900 hover:bg-navy-50 rounded-lg transition-colors">Academics</a>
+                        <a href="#campus" class="mobile-link block py-3 px-4 text-lg font-medium text-navy-900 hover:bg-navy-50 rounded-lg transition-colors">Campus Life</a>
+                        <a href="#admissions" class="mobile-link block py-3 px-4 text-lg font-medium text-navy-900 hover:bg-navy-50 rounded-lg transition-colors">Admissions</a>
+                        <a href="#contact" class="mobile-link block py-3 px-4 text-lg font-medium text-navy-900 hover:bg-navy-50 rounded-lg transition-colors">Contact</a>
+                    </div>
+                </nav>
+                <div class="p-4 border-t border-navy-100">
+                    <a href="#admissions" class="mobile-link block w-full bg-navy-900 text-white text-center py-4 rounded-lg font-semibold">
                         Apply for Admission
                     </a>
+                    <p class="text-center text-navy-500 text-sm mt-4">+91 80 2345 6789</p>
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient min-h-[90vh] flex items-center relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-        </div>
-        
+    <section class="relative min-h-[85vh] flex items-center img-placeholder">
+        <div class="hero-overlay absolute inset-0"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-            <div class="text-center">
-                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight" data-aos="fade-up">
-                    Nurturing Minds,<br>
-                    <span class="text-accent-400">Shaping Futures</span>
+            <div class="max-w-3xl">
+                <div class="gold-line mb-6"></div>
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                    Where Excellence<br>Meets Opportunity
                 </h1>
-                <p class="text-lg sm:text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
-                    Empowering students with knowledge, values, and skills for a rapidly changing world since 1998.
+                <p class="text-lg sm:text-xl text-navy-200 mb-8 leading-relaxed max-w-2xl">
+                    For over 25 years, SKV School has been nurturing young minds and shaping future leaders through academic excellence and holistic development.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
-                    <a href="#admissions" class="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all btn-hover inline-flex items-center justify-center gap-2">
-                        Start Your Journey
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#admissions" class="inline-flex items-center justify-center gap-2 bg-white text-navy-900 px-8 py-4 rounded-lg font-semibold hover:bg-navy-50 transition-all">
+                        Begin Your Journey
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
                     </a>
-                    <a href="#about" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all border-2 border-white/30 inline-flex items-center justify-center gap-2">
-                        Discover More
+                    <a href="#about" class="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all">
+                        Explore Our School
                     </a>
                 </div>
             </div>
         </div>
         
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center hidden sm:block">
-            <p class="text-sm mb-2 opacity-80">Scroll to explore</p>
-            <div class="w-6 h-10 border-2 border-white/50 rounded-full mx-auto flex justify-center">
-                <div class="w-1 h-3 bg-white/80 rounded-full mt-2 animate-bounce"></div>
+        <!-- Accreditation Badge -->
+        <div class="absolute bottom-8 right-8 hidden lg:flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4">
+            <div class="text-right">
+                <div class="text-gold-400 font-semibold text-sm">CBSE Affiliated</div>
+                <div class="text-white/70 text-xs">Affiliation No. 830XXX</div>
+            </div>
+            <div class="w-px h-10 bg-white/20"></div>
+            <div class="text-right">
+                <div class="text-gold-400 font-semibold text-sm">ISO Certified</div>
+                <div class="text-white/70 text-xs">9001:2015</div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="bg-white py-12 lg:py-0 lg:-mt-16 relative z-20">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-2xl shadow-2xl p-8 lg:p-12 grid grid-cols-2 lg:grid-cols-4 gap-8" data-aos="fade-up">
+    <!-- Trust Indicators -->
+    <section class="bg-navy-900 py-12 lg:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
                 <div class="text-center">
-                    <div class="text-4xl lg:text-5xl font-bold stat-number" data-count="25">25+</div>
-                    <p class="text-gray-600 mt-2 font-medium">Years of Excellence</p>
+                    <div class="font-display text-4xl lg:text-5xl font-bold stat-gradient mb-2">25+</div>
+                    <div class="text-navy-300 font-medium">Years of Excellence</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl lg:text-5xl font-bold stat-number" data-count="2500">2500+</div>
-                    <p class="text-gray-600 mt-2 font-medium">Students</p>
+                    <div class="font-display text-4xl lg:text-5xl font-bold stat-gradient mb-2">2500+</div>
+                    <div class="text-navy-300 font-medium">Students</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl lg:text-5xl font-bold stat-number" data-count="200">200+</div>
-                    <p class="text-gray-600 mt-2 font-medium">Expert Faculty</p>
+                    <div class="font-display text-4xl lg:text-5xl font-bold stat-gradient mb-2">98%</div>
+                    <div class="text-navy-300 font-medium">Board Results</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl lg:text-5xl font-bold stat-number" data-count="100">100%</div>
-                    <p class="text-gray-600 mt-2 font-medium">Pass Rate</p>
+                    <div class="font-display text-4xl lg:text-5xl font-bold stat-gradient mb-2">150+</div>
+                    <div class="text-navy-300 font-medium">Faculty Members</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 lg:py-28 bg-gray-50">
+    <section id="about" class="py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">About Us</span>
-                <h2 class="text-3xl lg:text-5xl font-bold text-primary-900 mt-3">Building Tomorrow's Leaders</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">Our commitment to excellence has made us one of Bangalore's most trusted educational institutions.</p>
-            </div>
-            
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <div data-aos="fade-right">
-                    <div class="bg-gradient-to-br from-primary-900 to-primary-700 rounded-2xl p-8 lg:p-12 text-white relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-40 h-40 bg-accent-500/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                        <h3 class="text-2xl lg:text-3xl font-bold mb-6 relative z-10">Our Mission</h3>
-                        <p class="text-blue-100 text-lg leading-relaxed relative z-10">
-                            To nurture curious minds and compassionate hearts, empowering every student with the knowledge, skills, and values to thrive in an ever-changing world and contribute meaningfully to society.
-                        </p>
-                        <div class="mt-8 flex items-center gap-4 relative z-10">
-                            <div class="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <div class="gold-line mb-6"></div>
+                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
+                        A Legacy of Educational Excellence
+                    </h2>
+                    <p class="text-navy-600 text-lg leading-relaxed mb-6">
+                        Founded in 1998, SKV School has established itself as one of Bangalore's premier educational institutions. Our commitment to academic rigor, combined with a nurturing environment, has helped thousands of students achieve their full potential.
+                    </p>
+                    <p class="text-navy-600 text-lg leading-relaxed mb-8">
+                        We believe in developing well-rounded individuals who excel not just academically, but also in character, creativity, and leadership.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-navy-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
                             </div>
-                            <span class="font-semibold">CBSE Affiliated</span>
+                            <div>
+                                <div class="font-semibold text-navy-900">CBSE Curriculum</div>
+                                <div class="text-sm text-navy-500">Recognized Board</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-navy-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-navy-900">Expert Faculty</div>
+                                <div class="text-sm text-navy-500">Qualified Teachers</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-navy-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-navy-900">Modern Campus</div>
+                                <div class="text-sm text-navy-500">5-Acre Facility</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-navy-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-navy-900">ISO Certified</div>
+                                <div class="text-sm text-navy-500">Quality Assured</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="space-y-6" data-aos="fade-left">
-                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
-                        <div class="flex items-start gap-4">
-                            <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                <div class="relative">
+                    <div class="img-placeholder rounded-2xl aspect-[4/3] lg:aspect-square"></div>
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 max-w-xs hidden lg:block">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 bg-navy-900 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                                </svg>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-primary-900">Academic Excellence</h4>
-                                <p class="text-gray-600 mt-2">Rigorous curriculum with personalized attention to ensure every student reaches their full potential.</p>
+                                <div class="font-bold text-navy-900">Our Mission</div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
-                        <div class="flex items-start gap-4">
-                            <div class="w-14 h-14 bg-accent-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <svg class="w-7 h-7 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-primary-900">Experienced Faculty</h4>
-                                <p class="text-gray-600 mt-2">Dedicated teachers with decades of experience committed to inspiring and mentoring students.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
-                        <div class="flex items-start gap-4">
-                            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-primary-900">Holistic Development</h4>
-                                <p class="text-gray-600 mt-2">Beyond academics - sports, arts, music, and character building for well-rounded growth.</p>
-                            </div>
-                        </div>
+                        <p class="text-navy-600 text-sm leading-relaxed">
+                            To nurture confident, compassionate, and capable individuals prepared to lead in a global society.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Programs Section -->
-    <section id="academics" class="py-20 lg:py-28 bg-white">
+    <!-- Academics Section -->
+    <section id="academics" class="py-20 lg:py-28 bg-navy-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Our Programs</span>
-                <h2 class="text-3xl lg:text-5xl font-bold text-primary-900 mt-3">Academic Excellence at Every Level</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">Comprehensive education from kindergarten through high school with CBSE curriculum.</p>
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="gold-line mx-auto mb-6"></div>
+                <h2 class="font-display text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
+                    Academic Programs
+                </h2>
+                <p class="text-navy-600 text-lg">
+                    Comprehensive CBSE curriculum designed to prepare students for success at every stage.
+                </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid lg:grid-cols-3 gap-6 lg:gap-8">
                 <!-- Primary -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="0">
-                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6">
-                        <span class="text-blue-100 text-sm font-medium">Grades K-5</span>
-                        <h3 class="text-2xl font-bold text-white mt-1">Primary School</h3>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-6">Building strong foundations through play-based and experiential learning.</p>
+                <div class="premium-card overflow-hidden">
+                    <div class="img-placeholder h-48"></div>
+                    <div class="p-6 lg:p-8">
+                        <div class="text-gold-500 font-semibold text-sm mb-2">Foundation Years</div>
+                        <h3 class="font-display text-2xl font-bold text-navy-900 mb-3">Primary School</h3>
+                        <p class="text-navy-500 text-sm mb-1">Grades K-5</p>
+                        <p class="text-navy-600 mb-6">Building strong foundations through experiential learning and creative exploration.</p>
                         <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Activity-based learning
+                            <li class="flex items-center gap-3 text-navy-700">
+                                <svg class="w-5 h-5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Activity-based learning</span>
                             </li>
-                            <li class="flex items-center gap-3 text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Creative arts & music
+                            <li class="flex items-center gap-3 text-navy-700">
+                                <svg class="w-5 h-5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Creative arts & music</span>
                             </li>
-                            <li class="flex items-center gap-3 text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Language development
-                            </li>
-                            <li class="flex items-center gap-3 text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Physical education
+                            <li class="flex items-center gap-3 text-navy-700">
+                                <svg class="w-5 h-5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Language development</span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Middle -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover ring-4 ring-accent-500/50" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-gradient-to-r from-accent-500 to-accent-600 p-6 relative">
-                        <span class="absolute top-4 right-4 bg-white text-accent-600 text-xs font-bold px-3 py-1 rounded-full">POPULAR</span>
-                        <span class="text-accent-100 text-sm font-medium">Grades 6-8</span>
-                        <h3 class="text-2xl font-bold text-white mt-1">Middle School</h3>
+                <div class="premium-card overflow-hidden ring-2 ring-gold-400">
+                    <div class="img-placeholder h-48 relative">
+                        <div class="absolute top-4 right-4 bg-gold-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Most Enrolled
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-6">Developing critical thinking and academic excellence with STEM focus.</p>
+                    <div class="p-6 lg:p-8">
+                        <div class="text-gold-500 font-semibold text-sm mb-2">Building Excellence</div>
+                        <h3 class="font-display text-2xl font-bold text-navy-900 mb-3">Middle School</h3>
+                        <p class="text-navy-500 text-sm mb-1">Grades 6-8</p>
+                        <p class="text-navy-600 mb-6">Developing critical thinking and academic excellence with STEM focus.</p>
                         <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Advanced STEM curriculum
+                            <li class="flex items-center gap-3 text-navy-700">
+                                <svg class="w-5 h-5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>STEM curriculum</span>
                             </li>
-                            <li class="flex items-center gap-3 text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Foreign language programs
+                            <li class="flex items-center gap-3 text-navy-700">
+                                <svg class="w-5 h-5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Leadership programs</span>
                             </li>
-                            <li class="flex items-center gap-3 text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Leadership development
-                            </li>
-                            <li class="flex items-center gap-3 text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Sports & extracurriculars
+                            <li class="flex items-center gap-3 text-navy-700">
+                                <svg class="w-5 h-5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Sports & extracurriculars</span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- High -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-6">
-                        <span class="text-purple-100 text-sm font-medium">Grades 9-12</span>
-                        <h3 class="text-2xl font-bold text-white mt-1">High School</h3>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-6">Preparing students for competitive exams and university admissions.</p>
+                <div class="premium-card overflow-hidden">
+                    <div class="img-placeholder h-48"></div>
+                    <div class="p-6 lg:p-8">
+                        <div class="text-gold-500 font-semibold text-sm mb-2">College Readiness</div>
+                        <h3 class="font-display text-2xl font-bold text-navy-900 mb-3">High School</h3>
+                        <p class="text-navy-500 text-sm mb-1">Grades 9-12</p>
+                        <p class="text-navy-600 mb-6">Preparing students for competitive exams and university admissions.</p>
                         <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                CBSE Board preparation
+                            <li class="flex items-center gap-3 text-navy-700">
+                                <svg class="w-5 h-5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Board exam prep</span>
                             </li>
-                            <li class="flex items-center gap-3 text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                JEE/NEET coaching
+                            <li class="flex items-center gap-3 text-navy-700">
+                                <svg class="w-5 h-5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>JEE/NEET coaching</span>
                             </li>
-                            <li class="flex items-center gap-3 text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Career counseling
-                            </li>
-                            <li class="flex items-center gap-3 text-gray-700">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                Research opportunities
+                            <li class="flex items-center gap-3 text-navy-700">
+                                <svg class="w-5 h-5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Career counseling</span>
                             </li>
                         </ul>
                     </div>
@@ -431,165 +470,253 @@
         </div>
     </section>
 
-    <!-- Campus Life -->
-    <section id="campus" class="py-20 lg:py-28 bg-gray-50">
+    <!-- Campus Section -->
+    <section id="campus" class="py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Beyond Academics</span>
-                <h2 class="text-3xl lg:text-5xl font-bold text-primary-900 mt-3">Campus Life</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">A vibrant environment where students discover their passions and develop lifelong skills.</p>
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="gold-line mx-auto mb-6"></div>
+                <h2 class="font-display text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
+                    Campus & Facilities
+                </h2>
+                <p class="text-navy-600 text-lg">
+                    A modern 5-acre campus designed to inspire learning and growth.
+                </p>
             </div>
             
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
-                <div class="bg-white rounded-xl p-6 lg:p-8 text-center card-hover" data-aos="fade-up">
-                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                <div class="premium-card p-6 text-center">
+                    <div class="w-14 h-14 bg-navy-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-lg lg:text-xl font-bold text-primary-900 mb-2">Science Labs</h3>
-                    <p class="text-gray-600 text-sm lg:text-base">State-of-the-art laboratories for hands-on experiments</p>
+                    <h3 class="font-semibold text-navy-900 mb-1">Science Labs</h3>
+                    <p class="text-navy-500 text-sm">State-of-the-art equipment</p>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 lg:p-8 text-center card-hover" data-aos="fade-up" data-aos-delay="50">
-                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                <div class="premium-card p-6 text-center">
+                    <div class="w-14 h-14 bg-navy-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-lg lg:text-xl font-bold text-primary-900 mb-2">Sports Complex</h3>
-                    <p class="text-gray-600 text-sm lg:text-base">Multi-sport facilities for physical fitness</p>
+                    <h3 class="font-semibold text-navy-900 mb-1">Computer Labs</h3>
+                    <p class="text-navy-500 text-sm">Latest technology</p>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 lg:p-8 text-center card-hover" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                <div class="premium-card p-6 text-center">
+                    <div class="w-14 h-14 bg-navy-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
                     </div>
-                    <h3 class="text-lg lg:text-xl font-bold text-primary-900 mb-2">Library</h3>
-                    <p class="text-gray-600 text-sm lg:text-base">Extensive collection of books and digital resources</p>
+                    <h3 class="font-semibold text-navy-900 mb-1">Library</h3>
+                    <p class="text-navy-500 text-sm">15,000+ books</p>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 lg:p-8 text-center card-hover" data-aos="fade-up" data-aos-delay="150">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+                <div class="premium-card p-6 text-center">
+                    <div class="w-14 h-14 bg-navy-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-lg lg:text-xl font-bold text-primary-900 mb-2">Music & Arts</h3>
-                    <p class="text-gray-600 text-sm lg:text-base">Dedicated spaces for creative expression</p>
+                    <h3 class="font-semibold text-navy-900 mb-1">Sports Complex</h3>
+                    <p class="text-navy-500 text-sm">Multi-sport facility</p>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 lg:p-8 text-center card-hover" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <div class="premium-card p-6 text-center">
+                    <div class="w-14 h-14 bg-navy-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+                        </svg>
                     </div>
-                    <h3 class="text-lg lg:text-xl font-bold text-primary-900 mb-2">Computer Labs</h3>
-                    <p class="text-gray-600 text-sm lg:text-base">Modern technology and coding programs</p>
+                    <h3 class="font-semibold text-navy-900 mb-1">Music Room</h3>
+                    <p class="text-navy-500 text-sm">Performing arts</p>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 lg:p-8 text-center card-hover" data-aos="fade-up" data-aos-delay="250">
-                    <div class="w-16 h-16 bg-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                <div class="premium-card p-6 text-center">
+                    <div class="w-14 h-14 bg-navy-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-lg lg:text-xl font-bold text-primary-900 mb-2">Clubs & Activities</h3>
-                    <p class="text-gray-600 text-sm lg:text-base">Robotics, debate, drama, and more</p>
+                    <h3 class="font-semibold text-navy-900 mb-1">Health Center</h3>
+                    <p class="text-navy-500 text-sm">On-campus clinic</p>
+                </div>
+                
+                <div class="premium-card p-6 text-center">
+                    <div class="w-14 h-14 bg-navy-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-navy-900 mb-1">Auditorium</h3>
+                    <p class="text-navy-500 text-sm">500+ capacity</p>
+                </div>
+                
+                <div class="premium-card p-6 text-center">
+                    <div class="w-14 h-14 bg-navy-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-navy-900 mb-1">Smart Classes</h3>
+                    <p class="text-navy-500 text-sm">Digital learning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 lg:py-28 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="gold-line mx-auto mb-6"></div>
+                <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-4">
+                    What Parents Say
+                </h2>
+                <p class="text-navy-300 text-lg">
+                    Trusted by families across Bangalore for quality education.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-white/90 leading-relaxed mb-6">
+                        "SKV School has been instrumental in shaping my daughter's academic journey. The teachers are dedicated and the environment is nurturing."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-700 rounded-full"></div>
+                        <div>
+                            <div class="text-white font-semibold">Priya Sharma</div>
+                            <div class="text-navy-400 text-sm">Parent of Class 10 Student</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-white/90 leading-relaxed mb-6">
+                        "The holistic approach to education here is commendable. My son has developed not just academically but also as a confident individual."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-700 rounded-full"></div>
+                        <div>
+                            <div class="text-white font-semibold">Rajesh Kumar</div>
+                            <div class="text-navy-400 text-sm">Parent of Class 8 Student</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-white/90 leading-relaxed mb-6">
+                        "Excellent facilities and caring staff. The JEE coaching integrated with regular classes helped my son secure admission to IIT."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy-700 rounded-full"></div>
+                        <div>
+                            <div class="text-white font-semibold">Anita Reddy</div>
+                            <div class="text-navy-400 text-sm">Parent of 2024 Alumnus</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Admissions Section -->
-    <section id="admissions" class="py-20 lg:py-28 bg-white">
+    <section id="admissions" class="py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Join Us</span>
-                <h2 class="text-3xl lg:text-5xl font-bold text-primary-900 mt-3">Admissions Open 2026-27</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">Begin your child's journey to excellence. Limited seats available.</p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Process -->
-                <div data-aos="fade-right">
-                    <h3 class="text-2xl font-bold text-primary-900 mb-8">Admission Process</h3>
-                    <div class="space-y-6">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+                <div>
+                    <div class="gold-line mb-6"></div>
+                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-navy-900 mb-6">
+                        Begin Your Child's Journey
+                    </h2>
+                    <p class="text-navy-600 text-lg mb-8">
+                        Join our community of learners. We welcome families who share our commitment to academic excellence and character development.
+                    </p>
+                    
+                    <div class="space-y-6 mb-10">
                         <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-accent-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+                            <div class="w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0">1</div>
                             <div>
-                                <h4 class="text-lg font-bold text-primary-900">Submit Inquiry</h4>
-                                <p class="text-gray-600 mt-1">Fill out the inquiry form or visit our campus for a tour.</p>
+                                <h4 class="font-semibold text-navy-900">Submit Inquiry</h4>
+                                <p class="text-navy-600 text-sm mt-1">Fill out the inquiry form or schedule a campus visit.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-accent-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+                            <div class="w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0">2</div>
                             <div>
-                                <h4 class="text-lg font-bold text-primary-900">Application</h4>
-                                <p class="text-gray-600 mt-1">Complete the application with required documents.</p>
+                                <h4 class="font-semibold text-navy-900">Campus Tour & Interaction</h4>
+                                <p class="text-navy-600 text-sm mt-1">Meet our faculty and explore our facilities.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-accent-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+                            <div class="w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-semibold flex-shrink-0">3</div>
                             <div>
-                                <h4 class="text-lg font-bold text-primary-900">Assessment</h4>
-                                <p class="text-gray-600 mt-1">Student assessment and parent interaction.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-accent-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
-                            <div>
-                                <h4 class="text-lg font-bold text-primary-900">Enrollment</h4>
-                                <p class="text-gray-600 mt-1">Receive offer letter and complete enrollment.</p>
+                                <h4 class="font-semibold text-navy-900">Assessment & Admission</h4>
+                                <p class="text-navy-600 text-sm mt-1">Complete the admission process and join our family.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="mt-10 bg-gradient-to-r from-primary-50 to-accent-50 rounded-xl p-6 border-l-4 border-accent-500">
-                        <h4 class="font-bold text-primary-900 mb-3">Important Dates</h4>
-                        <ul class="space-y-2 text-gray-700">
-                            <li><strong>Applications Open:</strong> March 1, 2026</li>
-                            <li><strong>Last Date:</strong> May 31, 2026</li>
-                            <li><strong>Session Begins:</strong> June 15, 2026</li>
-                        </ul>
+                    <div class="bg-navy-50 rounded-xl p-6 border-l-4 border-gold-500">
+                        <h4 class="font-semibold text-navy-900 mb-3">Important Dates 2026-27</h4>
+                        <div class="space-y-2 text-navy-700 text-sm">
+                            <p><span class="font-medium">Applications Open:</span> March 1, 2026</p>
+                            <p><span class="font-medium">Last Date to Apply:</span> May 31, 2026</p>
+                            <p><span class="font-medium">Academic Session:</span> Begins June 2026</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Form -->
-                <div data-aos="fade-left">
-                    <div class="bg-gray-50 rounded-2xl p-6 lg:p-8">
-                        <h3 class="text-2xl font-bold text-primary-900 mb-6">Request Information</h3>
+                <div>
+                    <div class="bg-navy-50 rounded-2xl p-6 lg:p-8">
+                        <h3 class="font-display text-2xl font-bold text-navy-900 mb-6">Admission Inquiry</h3>
                         <form id="admissionForm" class="space-y-4">
-                            <div>
-                                <input type="text" placeholder="Parent/Guardian Name *" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <input type="text" placeholder="Parent Name *" required class="w-full px-4 py-3.5 rounded-lg border border-navy-200 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-all text-navy-900 placeholder-navy-400">
+                                <input type="tel" placeholder="Phone Number *" required class="w-full px-4 py-3.5 rounded-lg border border-navy-200 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-all text-navy-900 placeholder-navy-400">
                             </div>
-                            <div>
-                                <input type="email" placeholder="Email Address *" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all">
-                            </div>
-                            <div>
-                                <input type="tel" placeholder="Phone Number *" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all">
-                            </div>
-                            <div>
-                                <input type="text" placeholder="Student Name *" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all">
-                            </div>
-                            <div>
-                                <select required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-gray-600">
-                                    <option value="">Select Grade *</option>
-                                    <option>Pre-KG</option>
-                                    <option>LKG</option>
-                                    <option>UKG</option>
-                                    <option>Grade 1</option>
-                                    <option>Grade 2</option>
-                                    <option>Grade 3</option>
-                                    <option>Grade 4</option>
-                                    <option>Grade 5</option>
-                                    <option>Grade 6</option>
-                                    <option>Grade 7</option>
-                                    <option>Grade 8</option>
-                                    <option>Grade 9</option>
-                                    <option>Grade 10</option>
-                                    <option>Grade 11 - Science</option>
-                                    <option>Grade 11 - Commerce</option>
-                                    <option>Grade 12</option>
-                                </select>
-                            </div>
-                            <div>
-                                <textarea rows="3" placeholder="Message (Optional)" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all resize-none"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-accent-500 hover:bg-accent-600 text-white py-4 rounded-xl font-bold text-lg transition-all btn-hover">
+                            <input type="email" placeholder="Email Address *" required class="w-full px-4 py-3.5 rounded-lg border border-navy-200 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-all text-navy-900 placeholder-navy-400">
+                            <input type="text" placeholder="Student Name *" required class="w-full px-4 py-3.5 rounded-lg border border-navy-200 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-all text-navy-900 placeholder-navy-400">
+                            <select required class="w-full px-4 py-3.5 rounded-lg border border-navy-200 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-all text-navy-900">
+                                <option value="" class="text-navy-400">Select Grade *</option>
+                                <option>Pre-KG / Nursery</option>
+                                <option>LKG / UKG</option>
+                                <option>Grade 1 - 3</option>
+                                <option>Grade 4 - 5</option>
+                                <option>Grade 6 - 8</option>
+                                <option>Grade 9 - 10</option>
+                                <option>Grade 11 - 12 (Science)</option>
+                                <option>Grade 11 - 12 (Commerce)</option>
+                            </select>
+                            <textarea rows="3" placeholder="Any specific requirements or questions?" class="w-full px-4 py-3.5 rounded-lg border border-navy-200 focus:border-navy-900 focus:ring-1 focus:ring-navy-900 outline-none transition-all resize-none text-navy-900 placeholder-navy-400"></textarea>
+                            <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-white py-4 rounded-lg font-semibold transition-all">
                                 Submit Inquiry
                             </button>
+                            <p class="text-navy-500 text-xs text-center">We'll respond within 24 hours. Your information is secure.</p>
                         </form>
                     </div>
                 </div>
@@ -598,193 +725,166 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 lg:py-28 bg-gray-50">
+    <section id="contact" class="py-20 lg:py-28 bg-navy-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-accent-500 font-semibold text-sm uppercase tracking-wider">Get in Touch</span>
-                <h2 class="text-3xl lg:text-5xl font-bold text-primary-900 mt-3">Contact Us</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">We're here to answer your questions and welcome you to our campus.</p>
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="gold-line mx-auto mb-6"></div>
+                <h2 class="font-display text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
+                    Get in Touch
+                </h2>
+                <p class="text-navy-600 text-lg">
+                    Visit our campus or reach out to learn more about SKV School.
+                </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white rounded-xl p-6 text-center card-hover" data-aos="fade-up">
-                    <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 text-center premium-card">
+                    <div class="w-14 h-14 bg-navy-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
                     </div>
-                    <h3 class="font-bold text-primary-900 mb-2">Visit Us</h3>
-                    <p class="text-gray-600 text-sm">SKV School Campus<br>Bangalore, Karnataka<br>India - 560001</p>
+                    <h3 class="font-semibold text-navy-900 mb-2">Campus Address</h3>
+                    <p class="text-navy-600 text-sm">SKV School Campus<br>Bangalore, Karnataka 560001<br>India</p>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="50">
-                    <div class="w-14 h-14 bg-accent-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <div class="bg-white rounded-xl p-6 text-center premium-card">
+                    <div class="w-14 h-14 bg-navy-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
                     </div>
-                    <h3 class="font-bold text-primary-900 mb-2">Call Us</h3>
-                    <p class="text-gray-600 text-sm">+91 80 2345 6789<br>+91 80 9876 5432</p>
+                    <h3 class="font-semibold text-navy-900 mb-2">Phone</h3>
+                    <p class="text-navy-600 text-sm">+91 80 2345 6789<br>+91 80 9876 5432</p>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <div class="bg-white rounded-xl p-6 text-center premium-card">
+                    <div class="w-14 h-14 bg-navy-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
                     </div>
-                    <h3 class="font-bold text-primary-900 mb-2">Email Us</h3>
-                    <p class="text-gray-600 text-sm">admissions@skvschool.edu.in<br>info@skvschool.edu.in</p>
-                </div>
-                
-                <div class="bg-white rounded-xl p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="150">
-                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="font-bold text-primary-900 mb-2">Office Hours</h3>
-                    <p class="text-gray-600 text-sm">Mon-Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 2:00 PM</p>
+                    <h3 class="font-semibold text-navy-900 mb-2">Email</h3>
+                    <p class="text-navy-600 text-sm">admissions@skvschool.edu.in<br>info@skvschool.edu.in</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary-950 text-white pt-16 pb-8">
+    <footer class="bg-navy-950 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                <div class="lg:col-span-1">
-                    <h3 class="text-2xl font-bold mb-4">SKV SCHOOL</h3>
-                    <p class="text-gray-400 mb-6">Committed to academic excellence and character development for over 25 years.</p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-accent-500 rounded-full flex items-center justify-center transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                            <span class="text-gold-400 font-display font-bold text-lg">S</span>
+                        </div>
+                        <span class="text-xl font-bold">SKV School</span>
+                    </div>
+                    <p class="text-navy-300 text-sm leading-relaxed mb-6">
+                        Nurturing minds and shaping futures through academic excellence since 1998.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 bg-white/10 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-accent-500 rounded-full flex items-center justify-center transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        <a href="#" class="w-9 h-9 bg-white/10 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.757-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-accent-500 rounded-full flex items-center justify-center transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.757-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-accent-500 rounded-full flex items-center justify-center transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        <a href="#" class="w-9 h-9 bg-white/10 hover:bg-gold-500 rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-                    <ul class="space-y-3 text-gray-400">
-                        <li><a href="#about" class="hover:text-accent-400 transition-colors">About Us</a></li>
-                        <li><a href="#academics" class="hover:text-accent-400 transition-colors">Academics</a></li>
-                        <li><a href="#admissions" class="hover:text-accent-400 transition-colors">Admissions</a></li>
-                        <li><a href="#contact" class="hover:text-accent-400 transition-colors">Contact</a></li>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-navy-300 text-sm">
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#academics" class="hover:text-white transition-colors">Academics</a></li>
+                        <li><a href="#admissions" class="hover:text-white transition-colors">Admissions</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Resources</h4>
-                    <ul class="space-y-3 text-gray-400">
-                        <li><a href="#" class="hover:text-accent-400 transition-colors">Parent Portal</a></li>
-                        <li><a href="#" class="hover:text-accent-400 transition-colors">Student Portal</a></li>
-                        <li><a href="#" class="hover:text-accent-400 transition-colors">Academic Calendar</a></li>
-                        <li><a href="#" class="hover:text-accent-400 transition-colors">News & Events</a></li>
+                    <h4 class="font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-navy-300 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Parent Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Student Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Academic Calendar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">News & Events</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="flex items-center gap-2">
-                            <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            +91 80 2345 6789
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            info@skvschool.edu.in
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 text-accent-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
-                            Bangalore, Karnataka
-                        </li>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-navy-300 text-sm">
+                        <li>+91 80 2345 6789</li>
+                        <li>info@skvschool.edu.in</li>
+                        <li>Bangalore, Karnataka</li>
+                        <li>Mon-Sat: 8am - 5pm</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-white/10 pt-8 text-center text-gray-400 text-sm">
-                <p>&copy; 2026 SKV School. All Rights Reserved. | <a href="#" class="hover:text-accent-400">Privacy Policy</a> | <a href="#" class="hover:text-accent-400">Terms of Use</a></p>
+            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-navy-400 text-sm">
+                <p>© 2026 SKV School. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Main Script -->
     <script>
-        // Initialize AOS only on desktop
-        if (window.innerWidth > 768) {
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100,
-                easing: 'ease-out-cubic'
-            });
-        }
-
-        // Mobile Menu
+        // Mobile Navigation
         const menuBtn = document.getElementById('menuBtn');
         const closeMenu = document.getElementById('closeMenu');
-        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileNav = document.getElementById('mobileNav');
         const mobileLinks = document.querySelectorAll('.mobile-link');
-        const body = document.body;
-
-        function openMenu() {
-            mobileMenu.classList.add('active');
-            body.style.overflow = 'hidden';
-        }
-
-        function closeMenuFn() {
-            mobileMenu.classList.remove('active');
-            body.style.overflow = '';
-        }
-
-        menuBtn.addEventListener('click', openMenu);
-        closeMenu.addEventListener('click', closeMenuFn);
+        
+        menuBtn?.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenu?.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
         mobileLinks.forEach(link => {
-            link.addEventListener('click', closeMenuFn);
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
 
-        // Smooth Scroll
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offset = 100;
-                    const targetPosition = target.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    const offset = 80;
+                    const position = target.offsetTop - offset;
+                    window.scrollTo({ top: position, behavior: 'smooth' });
                 }
             });
         });
 
-        // Form Submission
-        const form = document.getElementById('admissionForm');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your inquiry! Our admissions team will contact you within 24 hours.');
-                form.reset();
-            });
-        }
+        // Form submission
+        document.getElementById('admissionForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! Our admissions team will contact you within 24 hours.');
+            this.reset();
+        });
 
-        // Navbar Shadow on Scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-xl');
-            } else {
-                navbar.classList.remove('shadow-xl');
-            }
-        }, { passive: true });
-
-        console.log('✓ SKV School website loaded successfully');
+        console.log('✓ SKV School website loaded');
     </script>
 </body>
 </html>
